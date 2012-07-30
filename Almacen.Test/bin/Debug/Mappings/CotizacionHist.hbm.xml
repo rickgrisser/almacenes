@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CotizacionHist,Almacen.Data" table="cotizacion_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.CotizacionHistId,Almacen.Data">
+      <key-property name="IdCotizacion" column="id_cotizacion" type="int" />
+      <key-many-to-one name="AnexoHist" class="Almacen.Data.Entities.AnexoHist,Almacen.Data">
+        <column name="id_anexo" />
+        <column name="mod_anexo" />
+      </key-many-to-one>
+    </composite-id>
+    <many-to-one name="Proveedor" column="cve_proveedor"  />
+    <property name="FechaCotizacion" column="fecha_cotizacion" type="DateTime" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <bag name="CotizacionDetHis" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_cotizacion" />
+        <column name="id_anexo" />
+        <column name="mod_anexo" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CotizacionDetHis,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.TipoLicitacion,Almacen.Data" table="tipo_licitacion" lazy="true">
+    <id name="IdTipolicitacion" column="id_tipolicitacion" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesTipolicitacion" column="des_tipolicitacion" type="string" />
+    <bag name="AnexoHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_tipolicitacion" />
+      <one-to-many class="Almacen.Data.Entities.AnexoHist,Almacen.Data" />
+    </bag>
+    <bag name="Anexo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_tipolicitacion" />
+      <one-to-many class="Almacen.Data.Entities.Anexo,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

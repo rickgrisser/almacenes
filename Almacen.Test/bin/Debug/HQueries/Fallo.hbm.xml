@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="Fallo.CargaFallos">
+    <![CDATA[Select distinct f.Cotizacion.Anexo.NumeroAnexo, f.Cotizacion.Anexo.IdAnexo from Fallo f  
+              where year(f.Cotizacion.Anexo.FechaAnexo) = :intAnio
+              and f.Cotizacion.Anexo.Almacen.IdAlmacen = :strAlmacen
+              and (f.Estado <> 'C' or f.Estado is null)
+              order by f.Cotizacion.Anexo.NumeroAnexo asc]]>
+  </query>
+ 
+</hibernate-mapping>

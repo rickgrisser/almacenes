@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Cabms,Almacen.Data" table="cabms" lazy="true">
+    <id name="IdCabms" column="id_cabms" type="int">
+      <generator class="assigned" />
+    </id>
+    <many-to-one name="CabmCodigo" >
+      <!--DEL parrafo cascade="save-update"-->
+      <column name="id_grupo"  /> 
+      <column name="id_subgrupo"  />
+      <column name="id_clase"  />
+      <column name="id_subclase"  />
+      <column name="id_codigo"  />
+      <!---->
+    </many-to-one>
+    <bag name="Marca" inverse="true" lazy="true" cascade="delete">
+      <key column="id_cabms" />
+      <one-to-many class="Almacen.Data.Entities.Marca,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

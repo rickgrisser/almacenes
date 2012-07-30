@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatSoftware,Almacen.Data" table="cat_software" lazy="true">
+    <id name="IdSoftware" column="id_software" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesSoftware" column="des_software" type="string" />
+    <many-to-one name="CatCategoriasoftware" column="id_tiposoftware" cascade="save-update" />
+    <many-to-one name="CatFabricantesoft" column="id_fabricantesoft" cascade="save-update" />
+    <property name="Version" column="version" type="string" />
+    <property name="Licencias" column="licencias" type="int" />
+    <many-to-one name="CatTipolicencia" column="id_tipolicencia" cascade="save-update" />
+    <property name="Fechaadquisicion" column="fechaadquisicion" type="DateTime" />
+    <property name="Costo" column="costo" type="Decimal" />
+    <property name="Observaciones" column="observaciones" type="string" />
+    <property name="Garantia" column="garantia" type="int" />
+    <many-to-one name="CatGarantia" column="id_garantia" cascade="save-update" />
+    <property name="FechaVenceGarantia" column="fecha_vence_garantia" type="DateTime" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="Folio" column="folio" type="string" />
+    <property name="LicenciasDisponibles" column="licencias_disponibles" type="int" />
+    <property name="Serial" column="serial" type="string" />
+    <!--<bag name="CpuSoftware" inverse="true" lazy="true" cascade="delete">
+      <key column="id_software" />
+      <one-to-many class="Almacen.Data.Entities.CpuSoftware,Almacen.Data" />
+    </bag>
+    <bag name="DiscoManual" inverse="true" lazy="true" cascade="delete">
+      <key column="id_software" />
+      <one-to-many class="Almacen.Data.Entities.DiscoManual,Almacen.Data" />
+    </bag>-->
+  </class>
+</hibernate-mapping>

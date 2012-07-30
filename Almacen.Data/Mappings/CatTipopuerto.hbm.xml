@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatTipopuerto,Almacen.Data" table="cat_tipopuerto" lazy="true">
+    <id name="IdPuerto" column="id_puerto" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesTipopuerto" column="des_tipopuerto" type="string" />
+    <!--<bag name="Impresora" inverse="true" lazy="true" cascade="delete">
+      <key column="id_puerto" />
+      <one-to-many class="Almacen.Data.Entities.Impresora,Almacen.Data" />
+    </bag>
+    <bag name="Mouse" inverse="true" lazy="true" cascade="delete">
+      <key column="id_puerto" />
+      <one-to-many class="Almacen.Data.Entities.Mouse,Almacen.Data" />
+    </bag>-->
+    <bag name="Teclado" inverse="true" lazy="true" cascade="delete">
+      <key column="id_puerto" />
+      <one-to-many class="Almacen.Data.Entities.Teclado,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

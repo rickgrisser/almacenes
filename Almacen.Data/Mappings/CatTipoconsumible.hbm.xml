@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatTipoconsumible,Almacen.Data" table="cat_tipoconsumible" lazy="true">
+    <id name="IdTipoconsumible" column="id_tipoconsumible" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesTipoconsumible" column="des_tipoconsumible" type="string" />
+    <bag name="Consumible" inverse="true" lazy="true" cascade="delete">
+      <key column="id_tipoconsumible" />
+      <one-to-many class="Almacen.Data.Entities.Consumible,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

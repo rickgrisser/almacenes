@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="EntradaDetalle.CantEntro" >
+    <![CDATA[select sum(ed.Cantidad) from EntradaDetalle ed where ed.Entrada.Pedido.IdPedido = :intPedido 
+                  and ed.Articulo.Id.CveArt = :intArticulo 
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)]]>
+  </query>
+  
+  <query name="EntradaDetalle.CantidadTotal" >
+    <![CDATA[select sum(ed.Cantidad) from EntradaDetalle ed where ed.Entrada.Almacen.IdAlmacen = :strAlmacen 
+                  and ed.Articulo.Id.CveArt = :intCveArt
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)]]>
+  </query>
+
+  <query name="EntradaDetalle.CantArt" >
+    <![CDATA[select sum(ed.Cantidad) from EntradaDetalle ed where ed.Entrada.IdEntrada = :intIdEntrada
+                  and ed.Articulo.Id.CveArt = :intCveArt
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)]]>
+  </query>
+
+  <query name="EntradaDetalle.MovimientosPosteriores" >
+    <![CDATA[select count(*) from EntradaDetalle ed where ed.Entrada.Almacen.IdAlmacen = :strAlmacen
+                  and ed.Articulo.Id.CveArt in (:strArticulos) and ed.Entrada.FechaEntrada >= :strFecha
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)]]>
+  </query>
+
+  <query name="EntradaDetalle.ExistenciaTotal" >
+    <![CDATA[select sum(ed.Existencia) from EntradaDetalle ed where ed.Entrada.Almacen.IdAlmacen = :strAlmacen 
+                  and ed.Articulo.Id.CveArt = :intCveArt
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)]]>
+  </query>
+
+  <query name="EntradaDetalle.CargaDetalleXFechaExistencia" >
+    <![CDATA[from EntradaDetalle ed where ed.Articulo.Id.CveArt = :intCveArt and ed.Entrada.Almacen.IdAlmacen = :strAlmacen
+                  and ed.Existencia > 0 and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)
+                  and ed.FechaCaducidad=(select Min(FechaCaducidad) from EntradaDetalle ed2 
+                  where ed2.Articulo.Id.CveArt = :intCveArt and ed2.Entrada.Almacen.IdAlmacen = :strAlmacen
+                  and ed2.Existencia > 0 and (ed2.Entrada.EstadoEntrada <> 'C' or ed2.Entrada.EstadoEntrada is null))]]>
+  </query>
+
+  <query name="EntradaDetalle.CargaDetalleXFechaExistencia0" >
+    <![CDATA[from EntradaDetalle ed where ed.Articulo.Id.CveArt = :intCveArt and ed.Entrada.Almacen.IdAlmacen = :strAlmacen
+                  and ed.Existencia = 0 and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)
+                  and ed.FechaCaducidad=(select Max(FechaCaducidad) from EntradaDetalle ed2 
+                  where ed2.Articulo.Id.CveArt = :intCveArt and ed2.Entrada.Almacen.IdAlmacen = :strAlmacen
+                  and ed2.Existencia = 0 and (ed2.Entrada.EstadoEntrada <> 'C' or ed2.Entrada.EstadoEntrada is null))]]>
+  </query>
+
+  <query name="EntradaDetalle.RptEntradaVale" >
+    <![CDATA[Select ed.Entrada.NumeroEntrada, ed.Entrada.FechaEntrada, ed.Entrada.NumeroFactura,
+                  ed.Articulo.Id.CveArt, ed.Articulo.DesArticulo, ed.Articulo.CatUnidad, ed.Cantidad,
+                  ed.NoLote, ed.FechaCaducidad,                   
+                  ed.Entrada.Pedido.Proveedor.NombreFiscal,
+                  ed.Entrada.Pedido.NumeroPedido, ed.Entrada.Pedido.CatTipopedido.IdTipoped,
+                  pd.Cantidad,
+                  pd.PrecioUnitario,
+                  pd.Marca,                  
+                  ed.Entrada.Recibio.Nombre, ed.Entrada.Supervisor.Nombre, ed.Entrada.Usuario.Nombre,
+                  ed.Entrada.Pedido.ImporteDescuento, ed.Entrada.Pedido.Iva.Id.Porcentaje
+                  from EntradaDetalle ed, PedidoDetalle pd                             
+                  where ed.Entrada.NumeroEntrada=:intNumEntrada 
+                  and Year(ed.Entrada.FechaEntrada)=:intAnio
+                  and ed.Entrada.Almacen.IdAlmacen=:strAlmacen
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)  
+                  and (pd.Pedido.IdPedido=ed.Entrada.Pedido.IdPedido 
+                    and pd.Articulo.Id.CveArt=ed.Articulo.Id.CveArt)
+                  order by ed.Articulo.Id.CveArt]]>
+  </query>
+
+  <query name="EntradaDetalle.RptEntradaValeSinPedido" >
+    <![CDATA[Select ed.Entrada.NumeroEntrada, ed.Entrada.FechaEntrada, ed.Entrada.NumeroFactura,
+                  ed.Articulo.Id.CveArt, ed.Articulo.DesArticulo, ed.Articulo.CatUnidad, ed.Cantidad,
+                  ed.NoLote, ed.FechaCaducidad,                                     
+                  ed.Entrada.Recibio.Nombre, ed.Entrada.Supervisor.Nombre, ed.Entrada.Usuario.Nombre,
+                  ed.PrecioEntrada
+                  from EntradaDetalle ed                         
+                  where ed.Entrada.NumeroEntrada=:intNumEntrada 
+                  and Year(ed.Entrada.FechaEntrada)=:intAnio
+                  and ed.Entrada.Almacen.IdAlmacen=:strAlmacen
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)
+                  order by ed.Articulo.Id.CveArt]]>
+  </query>
+  
+  <query name="EntradaDetalle.RptEntradaPartida" >
+    <![CDATA[Select ap.Id.CatPartida.Partida,
+                  ap.Id.CatPartida.DesPartida,
+                  sum(ed.Cantidad * ed.PrecioEntrada),
+                  ed.Entrada.CatPresupuesto.DesPresupuesto
+                  from EntradaDetalle ed, ArticuloPartida ap
+                  where ed.Entrada.FechaEntrada between :datFechaIni and :datFechaFin
+                  and ed.Entrada.Almacen=:objAlmacen
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)
+                  and (ap.Id.Articulo=ed.Articulo and ap.FechaFin is null)
+                  group by 1,2,4
+                  order by 1]]>
+  </query>
+  
+  <query name="EntradaDetalle.RptEntradaIFAI" >
+    <![CDATA[select cast((select cb.Id.CveCBasico from CuadroBasico cb where cb.Id.Articulo=ed.Articulo and cb.FechaBaja is null) as string),
+                ed.Articulo.Id.CveArt, ed.Articulo.DesArticulo, ed.Articulo.CatUnidad, ed.Cantidad,
+                ed.PrecioEntrada, ed.Entrada.NumeroFactura, ed.Entrada.Pedido.IdPedido,
+                ed.Entrada.Pedido.Proveedor.NombreFiscal,
+                (select pe.Anexo.NumeroAnexo from Pedido pe where pe.IdPedido=ed.Entrada.Pedido.IdPedido),
+                ed.Entrada.Pedido.Fundamento.DesFundamento
+              from EntradaDetalle ed, ArticuloPartida ap
+              where ed.Entrada.Almacen=:objAlmacen
+                and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)
+                and ed.Entrada.FechaEntrada between :datFechaIni and :datFechaFin
+                and (ap.Id.Articulo=ed.Articulo and ap.FechaFin is null and ap.Id.CatPartida=:objCatPartida) 
+                order by 2]]>
+  </query>
+  <!--(select p.Proveedor.NombreFiscal from Pedido p where p.IdPedido=ed.Entrada.Pedido.IdPedido),
+                (select pe.Anexo.NumeroAnexo from Pedido pe where pe.IdPedido=ed.Entrada.Pedido.IdPedido),
+                (select pe.Fundamento.DesFundamento from Pedido pe where pe.IdPedido=ed.Entrada.Pedido.IdPedido)-->
+
+  <sql-query name="EntradaDetalle.KardexArticulos" >
+    <![CDATA[select 'E' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, e.fecha_entrada, p.numero_pedido, 
+                e.numero_entrada, ed.cantidad, -1 as surtida, ed.precio_entrada,
+                -1 as costo, ed.cantidad * ed.precio_entrada as entrada, -1 as salida, '' as proveedor,
+                p.id_tipoped
+            from entrada_detalle ed, entrada e, articulo a, articulo_partida ap, cat_partida cp, outer pedido p
+            where ed.cve_art >= :intCveArtIni and ed.cve_art <= :intCveArtFin 
+                and e.id_almacen = :strIdAlmacen                
+                and ed.id_entrada=e.id_entrada
+                and e.fecha_entrada >= :dtFechaIni and e.fecha_entrada <= :dtFechaFin
+                and (e.estado_entrada <> 'C' or e.estado_entrada is null)
+                and (ed.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and (ap.cve_art=ed.cve_art and ap.fecha_fin is null)
+                and ap.partida=cp.partida
+                and e.id_pedido=p.id_pedido
+            union
+            select 'S' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, s.fecha_salida, -1 as numpedido,
+                s.numero_salida, -1 as cantidad, sd.cantidad_surtida, -1 as precio, 
+                sd.costo_promedio, -1 as entrada, sd.cantidad_surtida * sd.costo_promedio as salida, ca.des_area,
+                -1 as tipoped
+            from salida_detalle sd, salida s, articulo a, articulo_partida ap, cat_partida cp, cat_area ca
+            where sd.cve_art >= :intCveArtIni and sd.cve_art <= :intCveArtFin  
+                and s.id_almacen = :strIdAlmacen             
+                and sd.id_salida=s.id_salida
+                and s.fecha_salida >= :dtFechaIni and s.fecha_salida <= :dtFechaFin
+                and (s.estado_salida <> 'C' or s.estado_salida is null)
+                and (sd.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and ap.cve_art=sd.cve_art and ap.fecha_fin is null
+                and ap.partida=cp.partida
+                and s.cve_area=ca.cve_area
+            order by 4,9,1]]>
+  </sql-query>
+
+
+  <sql-query name="EntradaDetalle.KardexPartida" >
+    <![CDATA[select 'E' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, e.fecha_entrada, p.numero_pedido, 
+                e.numero_entrada, ed.cantidad, -1 as surtida, ed.precio_entrada,
+                -1 as costo, ed.cantidad * ed.precio_entrada as entrada, -1 as salida, '' as proveedor,
+                p.id_tipoped
+            from entrada_detalle ed, entrada e, articulo a, articulo_partida ap, cat_partida cp, outer pedido p
+            where e.id_almacen = :strIdAlmacen                
+                and ed.id_entrada=e.id_entrada
+                and e.fecha_entrada >= :dtFechaIni and e.fecha_entrada <= :dtFechaFin
+                and (e.estado_entrada <> 'C' or e.estado_entrada is null)
+                and (ed.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and (ap.cve_art=ed.cve_art and ap.fecha_fin is null)
+                and (ap.partida=cp.partida and ap.partida = :strPartida)
+                and e.id_pedido=p.id_pedido
+            union
+            select 'S' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, s.fecha_salida, -1 as numpedido,
+                s.numero_salida, -1 as cantidad, sd.cantidad_surtida, -1 as precio, 
+                sd.costo_promedio, -1 as entrada, sd.cantidad_surtida * sd.costo_promedio as salida, ca.des_area,
+                -1 as tipoped
+            from salida_detalle sd, salida s, articulo a, articulo_partida ap, cat_partida cp, cat_area ca
+            where s.id_almacen = :strIdAlmacen             
+                and sd.id_salida=s.id_salida
+                and s.fecha_salida >= :dtFechaIni and s.fecha_salida <= :dtFechaFin
+                and (s.estado_salida <> 'C' or s.estado_salida is null)
+                and (sd.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and ap.cve_art=sd.cve_art and ap.fecha_fin is null
+                and (ap.partida=cp.partida and ap.partida = :strPartida)
+                and s.cve_area=ca.cve_area
+            order by 4,9,1]]>
+  </sql-query>
+
+  <sql-query name="EntradaDetalle.KardexFechas" >
+    <![CDATA[select 'E' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, e.fecha_entrada, p.numero_pedido, 
+                e.numero_entrada, ed.cantidad, -1 as surtida, ed.precio_entrada,
+                -1 as costo, ed.cantidad * ed.precio_entrada as entrada, -1 as salida, '' as proveedor,
+                p.id_tipoped
+            from entrada_detalle ed, entrada e, articulo a, articulo_partida ap, cat_partida cp, outer pedido p
+            where e.id_almacen = :strIdAlmacen                
+                and ed.id_entrada=e.id_entrada
+                and e.fecha_entrada >= :dtFechaIni and e.fecha_entrada <= :dtFechaFin
+                and (e.estado_entrada <> 'C' or e.estado_entrada is null)
+                and (ed.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and (ap.cve_art=ed.cve_art and ap.fecha_fin is null)
+                and ap.partida=cp.partida
+                and e.id_pedido=p.id_pedido
+            union
+            select 'S' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, s.fecha_salida, -1 as numpedido,
+                s.numero_salida, -1 as cantidad, sd.cantidad_surtida, -1 as precio, 
+                sd.costo_promedio, -1 as entrada, sd.cantidad_surtida * sd.costo_promedio as salida, ca.des_area,
+                -1 as tipoped
+            from salida_detalle sd, salida s, articulo a, articulo_partida ap, cat_partida cp, cat_area ca
+            where s.id_almacen = :strIdAlmacen             
+                and sd.id_salida=s.id_salida
+                and s.fecha_salida >= :dtFechaIni and s.fecha_salida <= :dtFechaFin
+                and (s.estado_salida <> 'C' or s.estado_salida is null)
+                and (sd.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and ap.cve_art=sd.cve_art and ap.fecha_fin is null
+                and ap.partida=cp.partida
+                and s.cve_area=ca.cve_area
+            order by 4,9,1]]>
+  </sql-query>
+
+  <sql-query name="EntradaDetalle.KardexFull" >
+    <![CDATA[select 'E' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, e.fecha_entrada, p.numero_pedido, 
+                e.numero_entrada, ed.cantidad, -1 as surtida, ed.precio_entrada,
+                -1 as costo, ed.cantidad * ed.precio_entrada as entrada, -1 as salida, '' as proveedor,
+                p.id_tipoped
+            from entrada_detalle ed, entrada e, articulo a, articulo_partida ap, cat_partida cp, outer pedido p
+            where ed.cve_art >= :intCveArtIni and ed.cve_art <= :intCveArtFin 
+                and e.id_almacen = :strIdAlmacen                
+                and ed.id_entrada=e.id_entrada
+                and e.fecha_entrada >= :dtFechaIni and e.fecha_entrada <= :dtFechaFin
+                and (e.estado_entrada <> 'C' or e.estado_entrada is null)
+                and (ed.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and (ap.cve_art=ed.cve_art and ap.fecha_fin is null)
+                and (ap.partida=cp.partida and ap.partida = :strPartida)
+                and e.id_pedido=p.id_pedido
+            union
+            select 'S' as first, ap.partida, cp.des_partida, a.cve_art, a.unidad , a.presentacion, 
+                a.presentacion_cant, a.presentacion_unid, s.fecha_salida, -1 as numpedido,
+                s.numero_salida, -1 as cantidad, sd.cantidad_surtida, -1 as precio, 
+                sd.costo_promedio, -1 as entrada, sd.cantidad_surtida * sd.costo_promedio as salida, ca.des_area,
+                -1 as tipoped
+            from salida_detalle sd, salida s, articulo a, articulo_partida ap, cat_partida cp, cat_area ca
+            where sd.cve_art >= :intCveArtIni and sd.cve_art <= :intCveArtFin  
+                and s.id_almacen = :strIdAlmacen             
+                and sd.id_salida=s.id_salida
+                and s.fecha_salida >= :dtFechaIni and s.fecha_salida <= :dtFechaFin
+                and (s.estado_salida <> 'C' or s.estado_salida is null)
+                and (sd.cve_art=a.cve_art and a.id_almacen = :strIdAlmacen)
+                and ap.cve_art=sd.cve_art and ap.fecha_fin is null
+                and (ap.partida=cp.partida and ap.partida = :strPartida)
+                and s.cve_area=ca.cve_area
+            order by 4,9,1]]>
+  </sql-query>
+
+  <query name="EntradaDetalle.RptEntradaFolioPartida" >
+    <![CDATA[Select ed.Entrada.Pedido.NumeroPedido, ed.Entrada.Pedido.CatTipopedido.DesTipoped, 
+                  ed.Entrada.NumeroFactura, ed.Entrada.FechaEntrada, ed.Entrada.NumeroEntrada,
+                  ed.Entrada.Pedido.Proveedor.NombreFiscal, sum(ed.Cantidad * ed.PrecioEntrada),
+                  ap.Id.CatPartida.Partida
+                  from EntradaDetalle ed, ArticuloPartida ap
+                  where ed.Entrada.FechaEntrada between :datFechaIni and :datFechaFin
+                  and ed.Entrada.Almacen=:objAlmacen
+                  and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)     
+                  and (ap.Id.Articulo=ed.Articulo and ap.FechaFin is null)       
+                  group by 1,2,3,4,5,6,8
+                  order by 8,5]]>
+  </query>
+
+  <query name="EntradaDetalle.RptEntradaProveedor" >
+    <![CDATA[Select ed.Entrada.Pedido.NumeroPedido, ed.Entrada.Pedido.CatTipopedido.DesTipoped,
+                    ed.Entrada.NumeroEntrada, ed.Entrada.FechaEntrada, 
+                    ed.Articulo.Id.CveArt, ed.Articulo.DesArticulo, ed.Articulo.CatUnidad,
+                    ed.Cantidad, ed.PrecioEntrada
+                  from EntradaDetalle ed
+                  where ed.Entrada.FechaEntrada between :datFechaIni and :datFechaFin
+                    and ed.Entrada.Pedido.Proveedor = :objProveedor
+                    and ed.Entrada.Almacen = :objAlmacen
+                    and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)                   
+                  order by 1,2,3,4,5]]>
+  </query>
+
+  <query name="EntradaDetalle.RptEntradaPedido" >
+    <![CDATA[Select pd.Pedido.NumeroPedido, pd.Pedido.CatTipopedido.DesTipoped, pd.Pedido.FechaPedido,
+                    pd.Pedido.Proveedor.NombreFiscal, ed.Entrada.FechaEntrada, ed.Entrada.NumeroEntrada,
+                    ed.Entrada.NumeroFactura, pd.Cantidad, sum(ed.Cantidad), ed.PrecioEntrada, 
+                    ed.Articulo.Id.CveArt, pd.Cantidad-sum(ed.Cantidad)
+                  from EntradaDetalle ed, PedidoDetalle pd                             
+                  where ed.Entrada.Almacen = :objAlmacen
+                    and pd.Pedido.NumeroPedido = :intNumeroPedido
+                    and year(pd.Pedido.FechaPedido) = :intAnio
+                    and pd.Pedido.CatTipopedido = :objCatTipopedido
+                    and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)  
+                    and (pd.Pedido.IdPedido=ed.Entrada.Pedido.IdPedido 
+                    and pd.Articulo.Id.CveArt=ed.Articulo.Id.CveArt)
+                  group by 1,2,3,4,5,6,7,8,10,11
+                  order by 11]]>
+  </query>
+  
+</hibernate-mapping>

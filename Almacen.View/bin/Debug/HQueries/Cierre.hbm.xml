@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="Cierre.ExisteCierre">
+    <![CDATA[Select count(*) from Cierre c 
+              where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+              and month(c.Id.FechaCierre) = :intMes
+              and year(c.Id.FechaCierre) = :intAnio]]>
+  </query>
+
+  <query name="Cierre.CargaCierre">
+    <![CDATA[from Cierre c where c.Id.Articulo.Id.CveArt = :intCveArt
+              and c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+              and month(c.Id.FechaCierre) = :intMes
+              and year(c.Id.FechaCierre) = :intAnio]]>
+  </query>
+
+  <query name="Cierre.CargaUltimaFecha">
+    <![CDATA[Select Max(c.Id.FechaCierre) from Cierre c
+                where Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen]]>
+  </query>
+
+  <query name="Cierre.CargaFechasCierres">
+    <![CDATA[select distinct c.Id.FechaCierre from Cierre c
+                where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen 
+                and year(c.Id.FechaCierre) = :intAnio
+                order by c.Id.FechaCierre asc]]>
+  </query>
+
+  <query name="Cierre.CargaCierreXAlmacen">
+    <![CDATA[from Cierre c
+                where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+                and month(c.Id.FechaCierre) = :intMes
+                and year(c.Id.FechaCierre) = :intAnio]]>
+  </query>
+
+  <query name="Cierre.RptCierre">
+    <![CDATA[select c.Id.Articulo.Id.CveArt, c.Id.Articulo.DesArticulo, c.Id.Articulo.CatUnidad,
+                c.Existencia, c.Importe, c.Id.FechaCierre,
+                ap.Id.CatPartida.Partida,
+                ap.Id.CatPartida.DesPartida
+                from Cierre c, ArticuloPartida ap
+                where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+                and month(c.Id.FechaCierre) = :intMes
+                and year(c.Id.FechaCierre) = :intAnio
+                and c.Existencia <> 0
+                and (ap.Id.Articulo=c.Id.Articulo and ap.FechaFin is null)
+                order by 1]]>
+  </query>
+
+  <query name="Cierre.RptCierreConySin">
+    <![CDATA[select c.Id.Articulo.Id.CveArt, c.Id.Articulo.DesArticulo, c.Id.Articulo.CatUnidad,
+                c.Existencia, c.Importe, c.Id.FechaCierre,
+                ap.Id.CatPartida.Partida,
+                ap.Id.CatPartida.DesPartida
+                from Cierre c, ArticuloPartida ap
+                where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+                and month(c.Id.FechaCierre) = :intMes
+                and year(c.Id.FechaCierre) = :intAnio                
+                and (ap.Id.Articulo=c.Id.Articulo and ap.FechaFin is null)
+                order by 1]]>
+  </query>
+  
+  <query name="Cierre.RptCierreXPartida">
+    <![CDATA[select c.Id.Articulo.Id.CveArt, c.Id.Articulo.DesArticulo, c.Id.Articulo.CatUnidad,
+                c.Existencia, c.Importe, c.Id.FechaCierre,
+                ap.Id.CatPartida.Partida,
+                ap.Id.CatPartida.DesPartida
+                from Cierre c, ArticuloPartida ap
+                where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+                and month(c.Id.FechaCierre) = :intMes
+                and year(c.Id.FechaCierre) = :intAnio
+                and c.Existencia <> 0
+                and (ap.Id.Articulo=c.Id.Articulo and ap.FechaFin is null)
+                and ap.Id.CatPartida.Partida = :strPartida
+                order by 1]]>
+  </query>
+
+  <query name="Cierre.RptCierreXPartidaConySin">
+    <![CDATA[select c.Id.Articulo.Id.CveArt, c.Id.Articulo.DesArticulo, c.Id.Articulo.CatUnidad,
+                c.Existencia, c.Importe, c.Id.FechaCierre,
+                ap.Id.CatPartida.Partida,
+                ap.Id.CatPartida.DesPartida
+                from Cierre c, ArticuloPartida ap
+                where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+                and month(c.Id.FechaCierre) = :intMes
+                and year(c.Id.FechaCierre) = :intAnio                
+                and (ap.Id.Articulo=c.Id.Articulo and ap.FechaFin is null)
+                and ap.Id.CatPartida.Partida = :strPartida
+                order by 1]]>
+  </query>
+  
+</hibernate-mapping>

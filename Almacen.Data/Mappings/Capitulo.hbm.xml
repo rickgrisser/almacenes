@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Capitulo,Almacen.Data" table="capitulo" lazy="true">
+    <id name="IdCapitulo" column="id_capitulo" type="string">
+      <generator class="assigned" />
+    </id>
+    <property name="DesCapitulo" column="des_capitulo" type="string" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.SalidaHist,Almacen.Data" table="salida_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.SalidaHistId,Almacen.Data">
+      <key-property name="IdSalida" column="id_salida" type="int" />
+      <key-property name="ModSalida" column="mod_salida" type="int" />
+    </composite-id>
+    <property name="NumeroSalida" column="numero_salida" type="int" />
+    <property name="FechaSalida" column="fecha_salida" type="DateTime" />
+    <property name="JefeServicio" column="jefe_servicio" type="string" />
+    <property name="Recibio" column="recibio" type="string" />
+    <property name="Entrego" column="entrego" type="int" />
+    <property name="EstadoSalida" column="estado_salida" type="string" />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <many-to-one name="CatArea" column="cve_area"  />
+    <property name="NoOrden" column="no_orden" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <bag name="SalidaDetHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_salida" />
+        <column name="mod_salida" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.SalidaDetHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

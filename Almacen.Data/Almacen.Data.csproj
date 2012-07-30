@@ -1,0 +1,896 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE9B2D63-2978-467A-99DE-B8CF6914B355}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Almacen.Data</RootNamespace>
+    <AssemblyName>Almacen.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="IBM.Data.Informix, Version=3.0.0.2, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\IBM.Data.Informix.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\Librerias\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator, Version=1.3.1.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\NHibernate.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\Librerias\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.3.1.40711, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.3.1.40711, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate30, Version=1.3.1.40711, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\Spring.Data.NHibernate30.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auxiliares\IDetalle.cs" />
+    <Compile Include="Auxiliares\IPadre.cs" />
+    <Compile Include="Dao\Catalogos\AlmacenDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\AnexoDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\CatActividadDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\CatPartidadDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\CatPresupuestoDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\CatTipopedidoDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\CatUnidadDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\IAlmacenDao.cs" />
+    <Compile Include="Dao\Catalogos\IAnexoDao.cs" />
+    <Compile Include="Dao\Catalogos\ICatActividadDao.cs" />
+    <Compile Include="Dao\Catalogos\ICatPartidaDao.cs" />
+    <Compile Include="Dao\Catalogos\ICatPresupuestoDao.cs" />
+    <Compile Include="Dao\Catalogos\ICatTipopedidoDao.cs" />
+    <Compile Include="Dao\Catalogos\ICatUnidadDao.cs" />
+    <Compile Include="Dao\Catalogos\IPedidoDao.cs" />
+    <Compile Include="Dao\Catalogos\IPedidoDetalleDao.cs" />
+    <Compile Include="Dao\Catalogos\ITipoMedicamentoDao.cs" />
+    <Compile Include="Dao\Catalogos\IViaAdministracionDao.cs" />
+    <Compile Include="Dao\Catalogos\PedidoDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\PedidoDetalleDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\TipoMedicamentoDaoImp.cs" />
+    <Compile Include="Dao\Catalogos\ViaAdministracionDaoImp.cs" />
+    <Compile Include="Dao\CustomLocalSessionFactory.cs" />
+    <Compile Include="Dao\GenericDaoImp.cs" />
+    <Compile Include="Dao\IGenericDao.cs" />
+    <Compile Include="Dao\IObjectDao.cs" />
+    <Compile Include="Dao\ModCatalogos\ArticuloDaoImp.cs" />
+    <Compile Include="Dao\ModCatalogos\ArticuloFarmaciaDaoImp.cs" />
+    <Compile Include="Dao\ModCatalogos\ArticuloPartidaDaoImp.cs" />
+    <Compile Include="Dao\ModCatalogos\CatAreaDaoImp.cs" />
+    <Compile Include="Dao\ModCatalogos\CuadroBasicoDaoImp.cs" />
+    <Compile Include="Dao\ModCatalogos\IArticuloDao.cs" />
+    <Compile Include="Dao\ModCatalogos\IArticuloFarmaciaDao.cs" />
+    <Compile Include="Dao\ModCatalogos\IArticuloPartidaDao.cs" />
+    <Compile Include="Dao\ModCatalogos\ICatAreaDao.cs" />
+    <Compile Include="Dao\ModCatalogos\ICuadroBasicoDao.cs" />
+    <Compile Include="Dao\ModCatalogos\IProveedorDao.cs" />
+    <Compile Include="Dao\ModCatalogos\ProveedorDaoImp.cs" />
+    <Compile Include="Dao\ModCierre\CierreDaoImp.cs" />
+    <Compile Include="Dao\ModCierre\CierrePasoDaoImp.cs" />
+    <Compile Include="Dao\ModCierre\ICierreDao.cs" />
+    <Compile Include="Dao\ModCierre\ICierrePasoDao.cs" />
+    <Compile Include="Dao\ModEntrada\CostoPromedioDaoImp.cs" />
+    <Compile Include="Dao\ModEntrada\EntradaDaoImp.cs" />
+    <Compile Include="Dao\ModEntrada\EntradaDetalleDaoImp.cs" />
+    <Compile Include="Dao\ModEntrada\ICostoPromedioDao.cs" />
+    <Compile Include="Dao\ModEntrada\IEntradaDao.cs" />
+    <Compile Include="Dao\ModEntrada\IEntradaDetalleDao.cs" />
+    <Compile Include="Dao\ModRequisicion\FalloDaoImp.cs" />
+    <Compile Include="Dao\ModRequisicion\FalloDetalleDaoImp.cs" />
+    <Compile Include="Dao\ModRequisicion\IFalloDao.cs" />
+    <Compile Include="Dao\ModRequisicion\IFalloDetalleDao.cs" />
+    <Compile Include="Dao\ModRequisicion\IRequisicionDao.cs" />
+    <Compile Include="Dao\ModRequisicion\IRequisicionDetallDao.cs" />
+    <Compile Include="Dao\ModRequisicion\RequisicionDaoImp.cs" />
+    <Compile Include="Dao\ModRequisicion\RequisicionDetallDaoImp.cs" />
+    <Compile Include="Dao\ModSalida\ISalidaDao.cs" />
+    <Compile Include="Dao\ModSalida\ISalidaDetalleDao.cs" />
+    <Compile Include="Dao\ModSalida\SalidaDaoImp.cs" />
+    <Compile Include="Dao\ModSalida\SalidaDetalleDaoImp.cs" />
+    <Compile Include="Dao\ObjectDaoImp.cs" />
+    <Compile Include="Dao\Seguridad\IUsuarioDao.cs" />
+    <Compile Include="Dao\Seguridad\UsuarioDaoImp.cs" />
+    <Compile Include="Entities\Almacen.cs" />
+    <Compile Include="Entities\Anexo.cs" />
+    <Compile Include="Entities\AnexoDetalle.cs" />
+    <Compile Include="Entities\AnexoDetalleHist.cs" />
+    <Compile Include="Entities\AnexoDetalleHistId.cs" />
+    <Compile Include="Entities\AnexoHist.cs" />
+    <Compile Include="Entities\AnexoHistId.cs" />
+    <Compile Include="Entities\Articulo.cs" />
+    <Compile Include="Entities\ArticuloFarmacia.cs" />
+    <Compile Include="Entities\ArticuloFarmaciaId.cs" />
+    <Compile Include="Entities\ArticuloId.cs" />
+    <Compile Include="Entities\ArticuloPartida.cs" />
+    <Compile Include="Entities\ArticuloPartidaId.cs" />
+    <Compile Include="Entities\AsignacionBien.cs" />
+    <Compile Include="Entities\AsignacionBienHist.cs" />
+    <Compile Include="Entities\AsignacionBienHistId.cs" />
+    <Compile Include="Entities\CabmClase.cs" />
+    <Compile Include="Entities\CabmClaseId.cs" />
+    <Compile Include="Entities\CabmCodigo.cs" />
+    <Compile Include="Entities\CabmCodigoId.cs" />
+    <Compile Include="Entities\CabmGrupo.cs" />
+    <Compile Include="Entities\Cabms.cs" />
+    <Compile Include="Entities\CabmSubclase.cs" />
+    <Compile Include="Entities\CabmSubclaseId.cs" />
+    <Compile Include="Entities\CabmSubgrupo.cs" />
+    <Compile Include="Entities\CabmSubgrupoId.cs" />
+    <Compile Include="Entities\Capitulo.cs" />
+    <Compile Include="Entities\CatActividad.cs" />
+    <Compile Include="Entities\CatArea.cs" />
+    <Compile Include="Entities\CatCategoriasoftware.cs" />
+    <Compile Include="Entities\CatClasificacion.cs" />
+    <Compile Include="Entities\CatColor.cs" />
+    <Compile Include="Entities\CatColorimpresora.cs" />
+    <Compile Include="Entities\CatEjercicio.cs" />
+    <Compile Include="Entities\CatFabricantesoft.cs" />
+    <Compile Include="Entities\CatGarantia.cs" />
+    <Compile Include="Entities\CatPartida.cs" />
+    <Compile Include="Entities\CatPresupuesto.cs" />
+    <Compile Include="Entities\CatProcesador.cs" />
+    <Compile Include="Entities\CatRecurso.cs" />
+    <Compile Include="Entities\CatResmonitor.cs" />
+    <Compile Include="Entities\CatSoftware.cs" />
+    <Compile Include="Entities\CatTipoanexotecnico.cs" />
+    <Compile Include="Entities\CatTipocomputadora.cs" />
+    <Compile Include="Entities\CatTipoconsumible.cs" />
+    <Compile Include="Entities\CatTipodispositivo.cs" />
+    <Compile Include="Entities\CatTipoimpresora.cs" />
+    <Compile Include="Entities\CatTipolicencia.cs" />
+    <Compile Include="Entities\CatTipopedido.cs" />
+    <Compile Include="Entities\CatTipopuerto.cs" />
+    <Compile Include="Entities\CatUnidad.cs" />
+    <Compile Include="Entities\CatUnidadlectora.cs" />
+    <Compile Include="Entities\Cierre.cs" />
+    <Compile Include="Entities\CierreId.cs" />
+    <Compile Include="Entities\CierrePaso.cs" />
+    <Compile Include="Entities\CierrePasoId.cs" />
+    <Compile Include="Entities\Consumible.cs" />
+    <Compile Include="Entities\ConsumibleId.cs" />
+    <Compile Include="Entities\Conteos.cs" />
+    <Compile Include="Entities\ConteosId.cs" />
+    <Compile Include="Entities\CostoPromedio.cs" />
+    <Compile Include="Entities\CostoPromedioId.cs" />
+    <Compile Include="Entities\Cotizacion.cs" />
+    <Compile Include="Entities\CotizacionDetalle.cs" />
+    <Compile Include="Entities\CotizacionDetHis.cs" />
+    <Compile Include="Entities\CotizacionDetHisId.cs" />
+    <Compile Include="Entities\CotizacionHist.cs" />
+    <Compile Include="Entities\CotizacionHistId.cs" />
+    <Compile Include="Entities\Cpu.cs" />
+    <Compile Include="Entities\CpuSoftware.cs" />
+    <Compile Include="Entities\CuadroBasico.cs" />
+    <Compile Include="Entities\CuadroBasicoId.cs" />
+    <Compile Include="Entities\DiscoManual.cs" />
+    <Compile Include="Entities\DiscoManualId.cs" />
+    <Compile Include="Entities\Dispositivo.cs" />
+    <Compile Include="Entities\Entrada.cs" />
+    <Compile Include="Entities\EntradaDetalle.cs" />
+    <Compile Include="Entities\Audit\EntradaDetHist.cs" />
+    <Compile Include="Entities\Audit\EntradaHist.cs" />
+    <Compile Include="Entities\Fallo.cs" />
+    <Compile Include="Entities\FalloDetalle.cs" />
+    <Compile Include="Entities\FalloDetalleHist.cs" />
+    <Compile Include="Entities\FalloDetalleHistId.cs" />
+    <Compile Include="Entities\FalloHist.cs" />
+    <Compile Include="Entities\FalloHistId.cs" />
+    <Compile Include="Entities\Fundamento.cs" />
+    <Compile Include="Entities\Impresora.cs" />
+    <Compile Include="Entities\Inventario.cs" />
+    <Compile Include="Entities\InventarioId.cs" />
+    <Compile Include="Entities\Iva.cs" />
+    <Compile Include="Entities\IvaId.cs" />
+    <Compile Include="Entities\Marbete.cs" />
+    <Compile Include="Entities\MarbeteId.cs" />
+    <Compile Include="Entities\Marca.cs" />
+    <Compile Include="Entities\MarcaId.cs" />
+    <Compile Include="Entities\Modelo.cs" />
+    <Compile Include="Entities\ModeloId.cs" />
+    <Compile Include="Entities\Modulo.cs" />
+    <Compile Include="Entities\ModuloId.cs" />
+    <Compile Include="Entities\Monitor.cs" />
+    <Compile Include="Entities\Mouse.cs" />
+    <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\PedidoDetalle.cs" />
+    <Compile Include="Entities\PedidoDetalleHis.cs" />
+    <Compile Include="Entities\PedidoDetalleHisId.cs" />
+    <Compile Include="Entities\PedidoEntrega.cs" />
+    <Compile Include="Entities\PedidoEntregaHis.cs" />
+    <Compile Include="Entities\PedidoEntregaHisId.cs" />
+    <Compile Include="Entities\PedidoHist.cs" />
+    <Compile Include="Entities\PedidoHistId.cs" />
+    <Compile Include="Entities\Proveedor.cs" />
+    <Compile Include="Entities\ReqDetHist.cs" />
+    <Compile Include="Entities\ReqDetHistId.cs" />
+    <Compile Include="Entities\Requisicion.cs" />
+    <Compile Include="Entities\RequisicionDetall.cs" />
+    <Compile Include="Entities\RequisicionHist.cs" />
+    <Compile Include="Entities\RequisicionHistId.cs" />
+    <Compile Include="Entities\ReservaAutoHis.cs" />
+    <Compile Include="Entities\ReservaAutoHisId.cs" />
+    <Compile Include="Entities\ReservaAutorizada.cs" />
+    <Compile Include="Entities\ReservaSolicHist.cs" />
+    <Compile Include="Entities\ReservaSolicHistId.cs" />
+    <Compile Include="Entities\ReservaSolicitud.cs" />
+    <Compile Include="Entities\ResguardoEntrega.cs" />
+    <Compile Include="Entities\ResguardoEntregaDetalle.cs" />
+    <Compile Include="Entities\ResguardoEntregaDetalleHist.cs" />
+    <Compile Include="Entities\ResguardoEntregaDetalleHistId.cs" />
+    <Compile Include="Entities\ResguardoEntregaHist.cs" />
+    <Compile Include="Entities\ResguardoEntregaHistId.cs" />
+    <Compile Include="Entities\Salida.cs" />
+    <Compile Include="Entities\SalidaDetalle.cs" />
+    <Compile Include="Entities\SalidaDetHist.cs" />
+    <Compile Include="Entities\SalidaDetHistId.cs" />
+    <Compile Include="Entities\SalidaHist.cs" />
+    <Compile Include="Entities\SalidaHistId.cs" />
+    <Compile Include="Entities\Teclado.cs" />
+    <Compile Include="Entities\TipoBaja.cs" />
+    <Compile Include="Entities\TipoLicitacion.cs" />
+    <Compile Include="Entities\TipoMedicamento.cs" />
+    <Compile Include="Entities\Ups.cs" />
+    <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="Entities\UsuarioModulo.cs" />
+    <Compile Include="Entities\UsuarioModuloId.cs" />
+    <Compile Include="Entities\ViaAdministracion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RptsClass\rptDataCierre.cs" />
+    <Compile Include="RptsClass\rptDataEntradaDetallado.cs" />
+    <Compile Include="RptsClass\rptDataEntradaFolio.cs" />
+    <Compile Include="RptsClass\rptDataEntradaFolioPartida.cs" />
+    <Compile Include="RptsClass\rptDataEntradaIFAI.cs" />
+    <Compile Include="RptsClass\rptDataEntradaPartida.cs" />
+    <Compile Include="RptsClass\rptDataEntradaPedido.cs" />
+    <Compile Include="RptsClass\rptDataEntradaProveedor.cs" />
+    <Compile Include="RptsClass\rptDataEntradaVale.cs" />
+    <Compile Include="RptsClass\rptDataKardex.cs" />
+    <Compile Include="RptsClass\rptDataPedidosGenerados.cs" />
+    <Compile Include="RptsClass\rptDataRequisicionVale.cs" />
+    <Compile Include="RptsClass\rptDataSalidaArea.cs" />
+    <Compile Include="RptsClass\rptDataSalidaVale.cs" />
+    <Compile Include="Rpts\headerCarta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\headerCarta1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>headerCarta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\headerCartaH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>headerCartaH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\headerOficio.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\headerOficio1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>headerOficio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\Inventario\rptCierre.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCierre.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaDetallado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaDetallado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaFolio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaFolio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaFolioPartida.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaFolioPartida.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaIFAI.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaIFAI.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaPartida.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaPartida.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaPedido.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaPedido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaProveedor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaProveedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModEntrada\rptEntradaVale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptEntradaVale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModReportes\rptKardex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptKardex.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModReportes\rptPedidosGenerados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPedidosGenerados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModRequisicion\rptRequisicionVale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRequisicionVale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModSalida\rptSalidaArea.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSalidaArea.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpts\ModSalida\rptSalidaFolio.cs">
+      <DependentUpon>rptSalidaFolio.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Rpts\ModSalida\rptSalidaDetallado.cs">
+      <DependentUpon>rptSalidaDetallado.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Rpts\ModSalida\rptSalidaFolioPartida.cs">
+      <DependentUpon>rptSalidaFolioPartida.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Rpts\ModSalida\rptSalidaVale.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSalidaVale.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\Mouse.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Ups.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Dispositivo.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Impresora.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Teclado.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Monitor.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatClasificacion.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatProcesador.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatTipocomputadora.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatUnidadlectora.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Cpu.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CpuSoftware.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatResmonitor.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatTipopuerto.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatColorimpresora.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatTipodispositivo.hbm.xml" />
+    <EmbeddedResource Include="HQueries\PedidoDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\CatTipopedido.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Proveedor.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Mappings\DiscoManual.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatSoftware.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatCategoriasoftware.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatFabricantesoft.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatGarantia.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatTipolicencia.hbm.xml" />
+    <EmbeddedResource Include="Mappings\Consumible.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatColor.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatTipoconsumible.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatTipoimpresora.hbm.xml" />
+    <EmbeddedResource Include="Mappings\CatTipoanexotecnico.hbm.xml" />
+    <EmbeddedResource Include="HQueries\CatActividad.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\CatPresupuesto.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Almacen.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Articulo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\CatArea.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\CatPartida.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\CatUnidad.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Cierre.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\CierrePaso.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\CostoPromedio.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Entrada.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\EntradaDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Fallo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\FalloDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Pedido.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\QueriesUtil.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Requisicion.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\RequisicionDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Salida.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\SalidaDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\TipoMedicamento.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\Usuario.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HQueries\ViaAdministracion.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Almacen.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Anexo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\AnexoDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\AnexoDetalleHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\AnexoHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Articulo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ArticuloFarmacia.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ArticuloPartida.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\AsignacionBien.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\AsignacionBienHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CabmClase.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CabmCodigo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CabmGrupo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Cabms.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CabmSubclase.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CabmSubgrupo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Capitulo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatActividad.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatArea.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatEjercicio.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatPartida.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatPresupuesto.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatRecurso.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatTipopedido.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CatUnidad.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Cierre.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CierrePaso.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Conteos.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CostoPromedio.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Cotizacion.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CotizacionDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CotizacionDetHis.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CotizacionHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\CuadroBasico.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Entrada.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\EntradaDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Audit\EntradaDetHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Audit\EntradaHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Fallo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\FalloDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\FalloDetalleHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\FalloHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Fundamento.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Inventario.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Iva.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Marbete.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Marca.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Modelo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Modulo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Pedido.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\PedidoDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\PedidoDetalleHis.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\PedidoEntrega.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\PedidoEntregaHis.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\PedidoHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Proveedor.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ReqDetHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Requisicion.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\RequisicionDetall.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\RequisicionHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ReservaAutoHis.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ReservaAutorizada.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ReservaSolicHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ReservaSolicitud.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ResguardoEntrega.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ResguardoEntregaDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ResguardoEntregaDetalleHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ResguardoEntregaHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Salida.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\SalidaDetalle.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\SalidaDetHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\SalidaHist.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\TipoBaja.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\TipoLicitacion.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\TipoMedicamento.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\UsuarioModulo.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\ViaAdministracion.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mappings\Usuario.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dao\Dao.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Dao\NHibernate.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Rpts\headerCarta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>headerCarta1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\headerCartaH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>headerCartaH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\headerOficio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>headerOficio1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\Inventario\rptCierre.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCierre.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaDetallado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaDetallado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaFolio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaFolio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaFolioPartida.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaFolioPartida.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaIFAI.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaIFAI.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaPartida.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaPartida.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaPedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaPedido.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaProveedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaProveedor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModEntrada\rptEntradaVale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptEntradaVale.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModReportes\rptKardex.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptKardex.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModReportes\rptPedidosGenerados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPedidosGenerados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModRequisicion\rptRequisicionVale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRequisicionVale.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModSalida\rptSalidaArea.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSalidaArea.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModSalida\rptSalidaFolio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSalidaFolio.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModSalida\rptSalidaDetallado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSalidaDetallado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModSalida\rptSalidaFolioPartida.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSalidaFolioPartida.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpts\ModSalida\rptSalidaVale.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSalidaVale.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

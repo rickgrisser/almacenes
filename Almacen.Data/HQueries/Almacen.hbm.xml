@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="Almacen.Almacenes">
+    <![CDATA[from UsuarioModulo u 
+                join fetch u.Id.Modulo m 
+                join fetch m.Id.Almacen a
+                where u.Id.Usuario.IdUsuario = :intIdUsuario and u.Estatus='A'
+                order by a.DesAlmacen]]>    
+  </query>
+
+</hibernate-mapping>
+

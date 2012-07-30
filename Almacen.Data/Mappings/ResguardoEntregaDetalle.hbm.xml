@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data" table="resguardo_entrega_detalle" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.ResguardoEntregaDetalleId,Almacen.Data">
+      <key-many-to-one name="ResguardoEntrega" class="Almacen.Data.Entities.ResguardoEntrega,Almacen.Data">
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+      </key-many-to-one>
+      <key-property name="Inventario" column="inventario" type="int" />
+      <key-property name="Consecutivo" column="consecutivo" type="int" />
+    </composite-id>-->
+    <id name="IdResguardoEntregaDetalle" column="id_resguardoentregadetalle" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="ResguardoEntrega" class="Almacen.Data.Entities.ResguardoEntrega,Almacen.Data" column="id_resguardo" />
+    <property name="Inventario" column="inventario" type="long" />
+    <property name="Consecutivo" column="consecutivo" type="int" />
+    <property name="Descripcion" column="descripcion" type="string" />
+    <property name="Observaciones" column="observaciones" type="string" />
+    <property name="Serie" column="serie" type="string" />
+    <property name="EstatusBien" column="estatus_bien" type="string" />
+    <property name="EstatusAsignacion" column="estatus_asignacion" type="string" />
+    <property name="FechaUltimoMovimiento" column="fecha_ultimo_movimiento" type="DateTime" />
+    <many-to-one name="TipoBaja" column="id_baja" cascade="save-update" />
+    <property name="StatusSoptec" column="status_soptec" type="string" />
+    <many-to-one name="CatTipoanexotecnico" column="cat_tipoanexotecnico" cascade="save-update" />   
+    <bag name="AsignacionBien" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.AsignacionBien,Almacen.Data" />
+    </bag>
+    <bag name="Cpu" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Cpu,Almacen.Data" />
+    </bag>
+    <bag name="Dispositivo" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />       
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Dispositivo,Almacen.Data" />
+    </bag>
+    <bag name="Impresora" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Impresora,Almacen.Data" />
+    </bag> 
+    <bag name="Monitor" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />       
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Monitor,Almacen.Data" />
+    </bag>
+    <bag name="Mouse" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Mouse,Almacen.Data" />
+    </bag>
+    <bag name="Teclado" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Teclado,Almacen.Data" />
+    </bag>
+    <bag name="Ups" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_resguardoentregadetalle" />      
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Ups,Almacen.Data" />
+    </bag>
+  </class>
+ 
+</hibernate-mapping>

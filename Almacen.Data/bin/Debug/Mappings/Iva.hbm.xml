@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Iva,Almacen.Data" table="iva" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.IvaId,Almacen.Data">
+      <key-property name="IdIva" column="id_iva" type="int" />
+      <key-property name="Porcentaje" column="porcentaje" type="short" />
+    </composite-id>
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="FechaBaja" column="fecha_baja" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <bag name="Anexo" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_iva" />
+        <column name="porcentaje" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Anexo,Almacen.Data" />
+    </bag>
+    <bag name="Pedido" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_iva" />
+        <column name="porcentaje" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Pedido,Almacen.Data" />
+    </bag>
+    <bag name="PedidoHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_iva" />
+        <column name="porcentaje" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.PedidoHist,Almacen.Data" />
+    </bag>
+    <bag name="AnexoHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_iva" />
+        <column name="porcentaje" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.AnexoHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

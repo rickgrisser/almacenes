@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ResguardoEntregaDetalleHist,Almacen.Data" table="resguardo_entrega_detalle_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ResguardoEntregaDetalleHistId,Almacen.Data">
+      <key-property name="Inventario" column="inventario" type="int" />
+      <key-property name="Consecutivo" column="consecutivo" type="int" />
+      <key-many-to-one name="ResguardoEntregaHist" class="Almacen.Data.Entities.ResguardoEntregaHist,Almacen.Data">
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+        <column name="mod_resguardo" />
+      </key-many-to-one>
+    </composite-id>
+    <property name="Serie" column="serie" type="string" />
+    <property name="EstatusBien" column="estatus_bien" type="string" />
+    <property name="EstatusAsignacion" column="estatus_asignacion" type="string" />
+    <property name="FechaUltimoMovimiento" column="fecha_ultimo_movimiento" type="DateTime" />
+    <property name="IdBaja" column="id_baja" type="int" />
+    <bag name="AsignacionBienHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="inventario" />
+        <column name="consecutivo" />
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+        <column name="mod_resguardo" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.AsignacionBienHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

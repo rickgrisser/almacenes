@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ResguardoEntregaHist,Almacen.Data" table="resguardo_entrega_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ResguardoEntregaHistId,Almacen.Data">
+      <key-property name="IdEntrada" column="id_entrada" type="int" />
+      <key-property name="RenglonEntrada" column="renglon_entrada" type="int" />
+      <key-property name="IdResguardo" column="id_resguardo" type="int" />
+      <key-property name="ModResguardo" column="mod_resguardo" type="int" />
+    </composite-id>
+    <property name="FechaMinuta" column="fecha_minuta" type="DateTime" />
+    <property name="Comentarios" column="comentarios" type="string" />
+    <property name="Pais" column="pais" type="string" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="IdCabms" column="id_cabms" type="int" />
+    <property name="IdArea" column="id_area" type="int" />
+    <property name="IdMarca" column="id_marca" type="int" />
+    <property name="IdModelo" column="id_modelo" type="int" />
+    <bag name="ResguardoEntregaDetalleHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+        <column name="mod_resguardo" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.ResguardoEntregaDetalleHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

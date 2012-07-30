@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Modulo,Almacen.Data" table="modulo" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ModuloId,Almacen.Data">
+      <key-property name="IdModulo" column="id_modulo" type="string" />
+      <key-many-to-one name="Almacen" class="Almacen.Data.Entities.Almacen,Almacen.Data" column="id_almacen" />
+    </composite-id>
+    <property name="DesModulo" column="des_modulo" type="string" />
+    <property name="Estatus" column="estatus" type="string" />
+    <property name="Tipo" column="tipo" type="string" />
+    <bag name="UsuarioModulo" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_modulo" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.UsuarioModulo,Almacen.Data" />
+    </bag>
+    <!--<many-to-one name="Almacen" column="id_almacen"  not-null="true" />-->
+  </class>
+</hibernate-mapping>

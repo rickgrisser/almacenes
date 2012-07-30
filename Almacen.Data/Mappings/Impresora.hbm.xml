@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Impresora,Almacen.Data" table="impresora" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.ImpresoraId,Almacen.Data">
+      <key-property name="IdImpresora" column="id_impresora" type="int" />
+      <key-many-to-one name="ResguardoEntregaDetalle" class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data">
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+        <column name="inventario" />
+        <column name="consecutivo" />
+      </key-many-to-one>
+    </composite-id>-->
+    <id name="IdImpresora" column="id_impresora" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="ResguardoEntregaDetalle" class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data" column="id_resguardoentregadetalle" />
+    <property name="Memoriamb" column="memoriamb" type="int" />
+    <property name="Velocidad" column="velocidad" type="int" />
+    <property name="Color" column="color" type="string" />
+    <property name="Ethernet" column="ethernet" type="Boolean" />
+    <many-to-one name="CatTipopuerto" column="id_puerto" cascade="save-update" />
+    <property name="CaracteristicasTecnicas" column="caracteristicas_tecnicas" type="string" />
+    <property name="Garantia" column="garantia" type="int" />
+    <many-to-one name="CatGarantia" column="id_garantia" cascade="save-update" />
+    <many-to-one name="CatTipoimpresora" column="id_tipoimpresora" cascade="save-update" />
+    <property name="FechaVenceGarantia" column="fecha_vence_garantia" type="DateTime" />
+    <many-to-one name="CatClasificacion" column="id_clasificacion" cascade="save-update" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <many-to-one name="CatColorimpresora" column="id_colorimpresosa" cascade="save-update" />
+  </class>
+</hibernate-mapping>

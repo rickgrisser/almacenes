@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.EntradaDetalle,Almacen.Data" table="entrada_detalle" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.EntradaDetalleId,Almacen.Data">
+      <key-many-to-one name="Entrada" class="Almacen.Data.Entities.Entrada,Almacen.Data" column="id_entrada" />
+      <key-property name="RenglonEntrada" column="renglon_entrada" type="int" />
+    </composite-id>-->
+    <id name="IdEntradaDetalle" column="id_entradadetalle" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="Entrada" class="Almacen.Data.Entities.Entrada,Almacen.Data" column="id_entrada" />
+    <property name="RenglonEntrada" column="renglon_entrada" type="short" />
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <property name="Cantidad" column="cantidad" type="Decimal" />
+    <property name="Existencia" column="existencia" type="Decimal" />
+    <property name="PrecioEntrada" column="precio_entrada" type="Decimal" />
+    <property name="FechaCaducidad" column="fecha_caducidad" type="DateTime" />
+    <property name="NoLote" column="no_lote" type="string" />
+    <bag name="SalidaDetalle" inverse="false" lazy="true" cascade="none">
+      <key>
+        <column name="id_entradadetalle" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.SalidaDetalle,Almacen.Entities" />
+    </bag>
+    <bag name="ResguardoEntrega" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="id_entradadetalle" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.ResguardoEntrega,Almacen.Entities" />
+    </bag>
+
+   
+  </class>
+  
+</hibernate-mapping>

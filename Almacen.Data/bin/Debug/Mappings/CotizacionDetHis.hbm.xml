@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CotizacionDetHis,Almacen.Data" table="cotizacion_det_his" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.CotizacionDetHisId,Almacen.Data">
+      <key-many-to-one name="CotizacionHist" class="Almacen.Data.Entities.CotizacionHist,Almacen.Data">
+        <column name="id_cotizacion" />
+        <column name="id_anexo" />
+        <column name="mod_anexo" />
+      </key-many-to-one>
+      <key-property name="RenglonAnexo" column="renglon_anexo" type="short" />
+    </composite-id>
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <property name="Marca" column="marca" type="string" />
+    <property name="Precio" column="precio" type="Decimal" />
+    <property name="Observaciones" column="observaciones" type="string" />
+  </class>
+</hibernate-mapping>

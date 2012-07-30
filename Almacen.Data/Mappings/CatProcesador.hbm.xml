@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatProcesador,Almacen.Data" table="cat_procesador" lazy="true">
+    <id name="IdProcesador" column="id_procesador" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesProcesador" column="des_procesador" type="string" />
+    <bag name="Cpu" inverse="true" lazy="true" cascade="delete">
+      <key column="id_procesador" />
+      <one-to-many class="Almacen.Data.Entities.Cpu,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

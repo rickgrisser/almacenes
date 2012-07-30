@@ -1,0 +1,6 @@
+<Modules>
+  <Module PersistentId="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System.Windows.Forms" />
+  <Module PersistentId="518A23A5-B8FE-4975-A564-27DAA06680B1" ModuleId="Almacen.View" />
+  <Module PersistentId="71C65670-62AB-4AA4-9D9F-01A2D6F425B9" ModuleId="Almacen.Business" />
+  <Module PersistentId="FE9B2D63-2978-467A-99DE-B8CF6914B355" ModuleId="Almacen.Data" />
+</Modules>

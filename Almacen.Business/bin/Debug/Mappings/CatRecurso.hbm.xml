@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatRecurso,Almacen.Data" table="cat_recurso" lazy="true">
+    <id name="IdRecurso" column="id_recurso" type="string">
+      <generator class="assigned" />
+    </id>
+    <property name="DesRecurso" column="des_recurso" type="string" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ae0bf949-67c0-4a14-847d-e6bc715d3b72" name="dayala@DRAGON 2011-06-27 14:29:07" runUser="INR\dayala" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="df7ddc32-2d30-4f4c-83c5-efafea4def36">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="dayala_DRAGON 2011-06-27 14_29_07" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-06-27T14:29:07.2896020-05:00" queuing="2011-06-27T14:29:08.2797010-05:00" start="2011-06-27T14:29:08.8067537-05:00" finish="2011-06-27T14:29:11.4150145-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="UseLikeWithProjection" storage="c:\presupuestosarquitectura\presupuestos\presupuestostest\bin\debug\presupuestostest.dll" id="f2622021-82be-fa3b-cc9e-497ba29d1a99">
+      <Execution timeOut="1800000" id="53fbed86-a3e2-4cc7-ab90-3317622bfbf2" />
+      <TestMethod codeBase="C:/PresupuestosArquitectura/Presupuestos/PresupuestosTest/bin/Debug/PresupuestosTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="PresupuestosTest.TestPresup1, PresupuestosTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="UseLikeWithProjection" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="f2622021-82be-fa3b-cc9e-497ba29d1a99" executionId="53fbed86-a3e2-4cc7-ab90-3317622bfbf2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="53fbed86-a3e2-4cc7-ab90-3317622bfbf2" testId="f2622021-82be-fa3b-cc9e-497ba29d1a99" testName="UseLikeWithProjection" computerName="DRAGON" duration="00:00:02.4161193" startTime="2011-06-27T14:29:08.8557586-05:00" endTime="2011-06-27T14:29:11.3290059-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53fbed86-a3e2-4cc7-ab90-3317622bfbf2">
+      <Output>
+        <ErrorInfo>
+          <Message>El método de inicialización PresupuestosTest.TestPresup1.Initialize produjo una excepción. NHibernate.MappingException: NHibernate.MappingException: Could not add assembly PresupuestosMap ---&gt; System.IO.FileNotFoundException: No se puede cargar el archivo o ensamblado 'PresupuestosMap' ni una de sus dependencias. El sistema no puede encontrar el archivo especificado.AVS: El registro del enlace de ensamblado está desactivado.
+Para habilitar el registro de errores del enlace de ensamblado, establezca el valor de Registro [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) como 1.
+Nota: existe una disminución del rendimiento asociada registro de errores del enlace de ensamblado.
+Para desactivar esta característica, elimine el valor de Registro [HKLM\Software\Microsoft\Fusion!EnableLog].
+.</Message>
+          <StackTrace>    en System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   en System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark&amp; stackMark, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   en System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   en System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark&amp; stackMark, Boolean forIntrospection)
+   en System.Reflection.Assembly.Load(String assemblyString)
+   en NHibernate.Cfg.Configuration.AddAssembly(String assemblyName)
+ --- Fin del seguimiento de la pila de la excepción interna ---
+    en NHibernate.Cfg.Configuration.LogAndThrow(Exception exception)
+   en NHibernate.Cfg.Configuration.AddAssembly(String assemblyName)
+   en NHibernate.Cfg.Configuration.DoConfigure(ISessionFactoryConfiguration factoryConfiguration)
+   en NHibernate.Cfg.Configuration.Configure(XmlReader textReader)
+   en NHibernate.Cfg.Configuration.Configure(String fileName, Boolean ignoreSessionFactoryConfig)
+   en NHibernate.Cfg.Configuration.Configure(String fileName)
+   en PresupuestosTest.SessionFactory.get_Instance() en C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\SessionFactory.cs:línea 20
+   en PresupuestosTest.TestPresup1.Initialize() en C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\TestPresup1.cs:línea 145
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

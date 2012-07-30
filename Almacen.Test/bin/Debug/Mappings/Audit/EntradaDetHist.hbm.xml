@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.EntradaDetHist,Almacen.Data" table="entrada_det_hist" lazy="true">
+    <id name="Id" column="id_entradadetallehist" type="long">
+      <generator class="increment" />
+    </id>
+    <property name="IdExterno" column="id_entradadetalle" type="long"/>
+    <many-to-one name="Entrada"  column="id_entrada" />
+    <property name="RenglonEntrada" column="renglon_entrada" type="short" />
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <property name="Cantidad" column="cantidad" type="Decimal" />
+    <property name="Existencia" column="existencia" type="Decimal" />
+    <property name="PrecioEntrada" column="precio_entrada" type="Decimal" />
+    <property name="FechaCaducidad" column="fecha_caducidad" type="DateTime" />
+    <property name="NoLote" column="no_lote" type="string" />
+    <property name="Tipo" column="tipo" type="string" />
+    <property name="IdHist" column="id_hist" type="long" />
+  </class>
+</hibernate-mapping>

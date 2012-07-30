@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatUnidad,Almacen.Data" table="cat_unidad" lazy="true">
+    <id name="Unidad" column="unidad" type="string">
+      <generator class="assigned" />
+    </id>
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="FechaBaja" column="fecha_baja" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />    
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <bag name="Articulo" inverse="true" lazy="true" cascade="delete">
+      <key column="unidad" />
+      <one-to-many class="Almacen.Data.Entities.Articulo,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Cierre,Almacen.Data" table="cierre" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.CierreId,Almacen.Data">
+      <key-property name="FechaCierre" column="fecha_cierre" type="DateTime" />
+      <key-many-to-one name="Articulo" class="Almacen.Data.Entities.Articulo,Almacen.Data">
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key-many-to-one>
+      <!--<key-many-to-one name="Almacen" class="Almacen.Data.Entities.Almacen,Almacen.Data">
+        <column name="id_almacen" />
+      </key-many-to-one>-->
+    </composite-id>
+    <property name="Importe" column="importe" type="Decimal" not-null="true" />
+    <property name="Existencia" column="existencia" type="Decimal" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <!--<one-to-one name="CierrePaso"  />-->
+  </class>  
+</hibernate-mapping>

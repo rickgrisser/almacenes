@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="CierrePaso.CargaCierrePaso">
+    <![CDATA[from CierrePaso c 
+              where c.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+              order by c.Id.FechaCierre, c.Id.EntSal]]>
+  </query>
+  
+  <!--<query name="CierrePaso.CargaEntradas">
+    <![CDATA[from EntradaDetalle ed where ed.Articulo.Id.CveArt = :intCveArt 
+              and ed.Id.Entrada.FechaEntrada between :dtFechaIni and :dtFechaFin 
+              and (ed.Id.Entrada.EstadoEntrada <> 'C' or ed.Id.Entrada.EstadoEntrada is null)
+              and ed.Id.Entrada.Almacen.IdAlmacen = :strAlmacen
+              order by ed.Id.Entrada.FechaEntrada]]>
+  </query>
+
+  <query name="CierrePaso.CargaSalidas">
+    <![CDATA[from SalidaDetalle sd where sd.Articulo.Id.CveArt = :intCveArt 
+              and sd.Id.Salida.FechaSalida between :dtFechaIni and :dtFechaFin 
+              and (sd.Id.Salida.EstadoSalida <> 'C' or sd.Id.Salida.EstadoSalida is null)
+              and sd.Id.Salida.Almacen.IdAlmacen = :strAlmacen
+              order by sd.Id.Salida.FechaSalida]]>
+  </query>-->
+
+  <query name="CierrePaso.CargaEntradas">
+    <![CDATA[Select ed.Entrada.IdEntrada, sum(ed.Cantidad), ed.PrecioEntrada, ed.Entrada.FechaEntrada 
+              from EntradaDetalle ed where ed.Articulo.Id.CveArt = :intCveArt 
+              and ed.Entrada.FechaEntrada between :dtFechaIni and :dtFechaFin 
+              and (ed.Entrada.EstadoEntrada <> 'C' or ed.Entrada.EstadoEntrada is null)
+              and ed.Entrada.Almacen.IdAlmacen = :strAlmacen
+              group by ed.Entrada.IdEntrada, ed.PrecioEntrada, ed.Entrada.FechaEntrada order by ed.Entrada.FechaEntrada]]>
+  </query>
+
+  <query name="CierrePaso.CargaSalidas">
+    <![CDATA[Select sd.Salida.IdSalida, sum(sd.CantidadSurtida), sd.CostoPromedio, sd.Salida.FechaSalida
+              from SalidaDetalle sd where sd.Articulo.Id.CveArt = :intCveArt 
+              and sd.Salida.FechaSalida between :dtFechaIni and :dtFechaFin 
+              and (sd.Salida.EstadoSalida <> 'C' or sd.Salida.EstadoSalida is null)
+              and sd.Salida.Almacen.IdAlmacen = :strAlmacen
+              group by sd.Salida.IdSalida, sd.CostoPromedio, sd.Salida.FechaSalida order by sd.Salida.FechaSalida]]>
+  </query>
+  
+ </hibernate-mapping>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+         xmlns:tx="http://www.springframework.net/tx">
+
+  <!-- Database Configuration -->
+  <db:provider id="DbProvider"
+         provider="Odbc-2.0"
+          connectionString=""/>
+
+  <!-- NHibernate Configuration -->
+  <object id="NHibernateSessionFactory" 
+          type="Almacen.Data.Dao.CustomLocalSessionFactory, Almacen.Data">
+     
+    <property name="MappingAssemblies">
+      <list>
+        <value>Almacen.Data</value>
+      </list>
+    </property>
+    <property name="HibernateProperties">
+      <dictionary>
+        <entry key="hibernate.connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+        <entry key="connection.driver_class" value="NHibernate.Driver.IfxDriver"/>
+        <entry key="dialect" value="NHibernate.Dialect.InformixDialect"/>
+        <entry key="connection.connection_string"
+               value="Server=ol_inrserver; DataBase=almacenes; User Id=informix; Password=informix; 
+                        Host=192.168.10.1; Protocol=olsoctcp; service=1526;"/>
+        <!--<entry key="proxyfactory.factory_class" value="NHibernate.ByteCode.LinFu.ProxyFactoryFactory,
+                                                         NHibernate.ByteCode.LinFu" />-->
+        <entry key="show_sql" value="true" />
+        <entry key="format_sql" value="true" />
+        <entry key="use_proxy_validator" value="false" />
+      </dictionary>     
+    </property>
+
+    <!-- provides integation with Spring's declarative transaction management features -->
+    <property name="ExposeTransactionAwareSessionFactory" value="true" />
+  </object>
+
+
+  <!-- Transaction Management Strategy - local database transactions -->
+  <object id="transactionManager"
+        type="Spring.Data.NHibernate.HibernateTransactionManager, Spring.Data.NHibernate30">
+    <property name="DbProvider"> <null/>  </property>
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+    <property name="entityInterceptor" ref="auditInterceptor"/>
+
+  </object>
+
+  <object id="parentSession" abstract="true"
+    type="Almacen.Data.Dao.GenericDaoImp, Almacen.Data">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <!-- Catalogos -->
+
+  <object id="anexoDao" type="Almacen.Data.Dao.Catalogos.AnexoDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="usuarioDao" type="Almacen.Data.Dao.Seguridad.UsuarioDaoImp, Almacen.Data" 
+          parent="parentSession"/>   
+
+  <object id="pedidoDao" type="Almacen.Data.Dao.Catalogos.PedidoDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="pedidodetalleDao" type="Almacen.Data.Dao.Catalogos.PedidoDetalleDaoImp, Almacen.Data"
+          parent="parentSession"/>
+  
+  <object id="almacenDao" type="Almacen.Data.Dao.Catalogos.AlmacenDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="catareaDao" type="Almacen.Data.Dao.ModCatalogos.CatAreaDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="falloDao" type="Almacen.Data.Dao.ModRequisicion.FalloDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="fallodetalleDao" type="Almacen.Data.Dao.ModRequisicion.FalloDetalleDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="catunidadDao" type="Almacen.Data.Dao.Catalogos.CatUnidadDaoImp, Almacen.Data"
+          parent="parentSession"/>
+  
+  <object id="viaadministracionDao" type="Almacen.Data.Dao.Catalogos.ViaAdministracionDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="tipomedicamentoDao" type="Almacen.Data.Dao.Catalogos.TipoMedicamentoDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="catpartidaDao" type="Almacen.Data.Dao.Catalogos.CatPartidaDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="catactividadDao" type="Almacen.Data.Dao.Catalogos.CatActividadDaoImp, Almacen.Data"
+          parent="parentSession"/>
+  
+  <object id="catpresupuestoDao" type="Almacen.Data.Dao.Catalogos.CatPresupuestoDaoImp, Almacen.Data"
+          parent="parentSession"/>
+  
+  <object id="cattipopedidoDao" type="Almacen.Data.Dao.Catalogos.CatTipopedidoDaoImp, Almacen.Data"
+          parent="parentSession"/>
+  
+  <!-- Dao's de Neogocio -->
+
+  <object id="entradaDao" type="Almacen.Data.Dao.ModEntrada.EntradaDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="entradadetalleDao" type="Almacen.Data.Dao.ModEntrada.EntradaDetalleDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="costopromedioDao" type="Almacen.Data.Dao.ModEntrada.CostoPromedioDaoImp, Almacen.Data"
+          parent="parentSession"/>
+  
+  <object id="salidaDao" type="Almacen.Data.Dao.ModSalida.SalidaDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="salidadetalleDao" type="Almacen.Data.Dao.ModSalida.SalidaDetalleDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="cierreDao" type="Almacen.Data.Dao.ModCierre.CierreDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="cierrepasoDao" type="Almacen.Data.Dao.ModCierre.CierrePasoDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="requisicionDao" type="Almacen.Data.Dao.ModRequisicion.RequisicionDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="requisiciondetallDao" type="Almacen.Data.Dao.ModRequisicion.RequisicionDetallDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="articuloDao" type="Almacen.Data.Dao.ModCatalogos.ArticuloDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="articulofarmaciaDao" type="Almacen.Data.Dao.ModCatalogos.ArticuloFarmaciaDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="articulopartidaDao" type="Almacen.Data.Dao.ModCatalogos.ArticuloPartidaDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="cuadrobasicoDao" type="Almacen.Data.Dao.ModCatalogos.CuadroBasicoDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+  <object id="proveedorDao" type="Almacen.Data.Dao.ModCatalogos.ProveedorDaoImp, Almacen.Data"
+          parent="parentSession"/>
+
+
+  <!-- Dao's Auditoria -->
+  <object id="objectDao" type="Almacen.Data.Dao.ObjectDaoImp, Almacen.Data"
+          parent="parentSession"/>
+  
+
+  <tx:attribute-driven />
+
+</objects>

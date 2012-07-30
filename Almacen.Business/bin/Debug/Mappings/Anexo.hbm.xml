@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Anexo,Almacen.Data" table="anexo" lazy="true">
+    <id name="IdAnexo" column="id_anexo" type="long">
+      <generator class="assigned" />
+    </id>
+    <property name="NumeroAnexo" column="numero_anexo" type="string" />
+    <property name="FechaAnexo" column="fecha_anexo" type="DateTime" />
+    <property name="Instituto" column="instituto" type="string" />
+    <property name="DesAnexo" column="des_anexo" type="string" />    
+    <many-to-one name="TipoLicitacion" column="id_tipolicitacion" />   
+    <property name="TechoPresupuestal" column="techo_presupuestal" type="Decimal" />
+    <property name="ImporteIva" column="importe_iva" type="short" />
+    <many-to-one name="Iva" >      
+      <column name="id_iva"  />     
+      <column name="porcentaje"  />
+    </many-to-one>    
+    <many-to-one name="Usuario" column="id_usuario"  />    
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaModificacion" column="fecha_modificacion" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="Modificacion" column="modificacion" type="int" />
+    <bag name="Requisicion" inverse="true" lazy="true" cascade="delete">
+      <key column="id_anexo" />
+      <one-to-many class="Almacen.Data.Entities.Requisicion,Almacen.Data" />
+    </bag>
+    <bag name="RequisicionHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_anexo" />
+      <one-to-many class="Almacen.Data.Entities.RequisicionHist,Almacen.Data" />
+    </bag>
+    <bag name="Cotizacion" inverse="true" lazy="true" cascade="delete">
+      <key column="id_anexo" />
+      <one-to-many class="Almacen.Data.Entities.Cotizacion,Almacen.Data" />
+    </bag>    
+    <bag name="AnexoDetalle" inverse="true" lazy="true" cascade="all-delete-orphan"
+         order-by="id_anexo asc, renglon_anexo asc" fetch="join">
+      <key column="id_anexo" />
+      <one-to-many class="Almacen.Data.Entities.AnexoDetalle,Almacen.Data" />
+    </bag>
+    <bag name="Pedido" inverse="true" lazy="true" cascade="none">
+      <key column="id_anexo" />
+      <one-to-many class="Almacen.Data.Entities.Pedido,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

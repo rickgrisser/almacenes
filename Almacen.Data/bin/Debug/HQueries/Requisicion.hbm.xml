@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="Requisicion.NumeroMaxRequisicion">
+    <![CDATA[select Max(r.NumeroRequisicion) from Requisicion r where r.Almacen.IdAlmacen = :strAlmacen
+             and year(r.FechaRequisicion) = :intAnio]]>
+  </query>
+
+  <query name="Requisicion.MaxId">
+    <![CDATA[select Max(r.IdRequisicion) from Requisicion r  ]]>
+  </query>
+
+  <query name="Requisicion.RequisicionExiste">
+    <![CDATA[Select count(*) from Requisicion r where r.Almacen.IdAlmacen = :strAlmacen 
+             and r.NumeroRequisicion = :intNumeroRequisicion and year(r.FechaRequisicion) = :intAnio]]>
+  </query>
+
+  <query name="Requisicion.CargaRequisicion">
+    <![CDATA[from Requisicion r 
+             join fetch r.Anexo
+             join fetch r.RequisicionDetall rd
+             join fetch rd.Articulo
+             where r.Almacen.IdAlmacen = :strAlmacen 
+             and r.NumeroRequisicion = :intNumeroRequisicion 
+             and year(r.FechaRequisicion) = :intAnio
+             and (r.Estatus <> 'C' or r.Estatus is null)]]>
+  </query>
+  
+</hibernate-mapping>

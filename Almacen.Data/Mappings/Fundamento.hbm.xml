@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Fundamento,Almacen.Data" table="fundamento" lazy="true">
+    <id name="CveFundamento" column="cve_fundamento" type="short">
+      <generator class="assigned" />
+    </id>
+    <property name="ArtiFundamento" column="arti_fundamento" type="short" />
+    <property name="IncisoFundamento" column="inciso_fundamento" type="string" />
+    <property name="FraccFundamento" column="fracc_fundamento" type="string" />
+    <property name="DesFundamento" column="des_fundamento" type="string" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="FechaBaja" column="fecha_baja" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <bag name="Pedido" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_fundamento" />
+      <one-to-many class="Almacen.Data.Entities.Pedido,Almacen.Data" />
+    </bag>
+    <bag name="PedidoHist" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_fundamento" />
+      <one-to-many class="Almacen.Data.Entities.PedidoHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

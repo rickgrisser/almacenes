@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.TipoBaja,Almacen.Data" table="tipo_baja" lazy="true">
+    <id name="IdBaja" column="id_baja" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesBaja" column="des_baja" type="string" />
+    <bag name="ResguardoEntregaDetalle" inverse="true" lazy="true" cascade="delete">
+      <key column="id_baja" />
+      <one-to-many class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ViaAdministracion,Almacen.Data" table="via_administracion" lazy="true">
+    <id name="IdAdministracion" column="id_administracion" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesAdministracion" column="des_administracion" type="string" />
+    <!--add parrafo-->
+    <bag name="ArticuloFarmacia" inverse="true" lazy="true" cascade="delete">
+      <key column="id_administracion" />
+      <one-to-many class="Almacen.Data.Entities.ArticuloFarmacia,Almacen.Data" />
+    </bag>
+    <!--add parrafo-->    
+    <bag name="Articulo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_administracion" />
+      <one-to-many class="Almacen.Data.Entities.Articulo,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.FalloHist,Almacen.Data" table="fallo_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.FalloHistId,Almacen.Data">
+      <key-property name="IdFallo" column="id_fallo" type="int" />
+      <key-property name="ModFallo" column="mod_fallo" type="int" />
+    </composite-id>
+    <property name="IdCotizacion" column="id_cotizacion" type="int" />
+    <property name="IdAnexo" column="id_anexo" type="int" />
+    <many-to-one name="Proveedor" column="cve_proveedor"  />
+    <property name="Fecha" column="fecha" type="DateTime" />
+    <property name="Estado" column="estado" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <bag name="FalloDetalleHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_fallo" />
+        <column name="mod_fallo" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.FalloDetalleHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Salida,Almacen.Data" table="salida" lazy="true">
+    <id name="IdSalida" column="id_salida" type="long">
+      <generator class="increment" />
+    </id>
+    <property name="NumeroSalida" column="numero_salida" type="int" />
+    <property name="FechaSalida" column="fecha_salida" type="DateTime" />
+    <property name="JefeServicio" column="jefe_servicio" type="string" />
+    <property name="Recibio" column="recibio" type="string" />
+    <!--<property name="Entrego" column="entrego" type="int" />-->
+    <many-to-one name="Entrego" column="entrego" />
+    <property name="EstadoSalida" column="estado_salida" type="string" />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <many-to-one name="CatArea" column="cve_area"  />
+    <property name="NoOrden" column="no_orden" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="Modificacion" column="modificacion" type="int" />
+    <bag name="SalidaDetalle" inverse="true" lazy="true" cascade="all-delete-orphan"
+         order-by="id_salida asc, renglon_salida asc" fetch="join">
+      <key column="id_salida" />
+      <one-to-many class="Almacen.Data.Entities.SalidaDetalle,Almacen.Data" />
+    </bag>
+  </class>
+  
+</hibernate-mapping>

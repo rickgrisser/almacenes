@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatColorimpresora,Almacen.Data" table="cat_colorimpresora" lazy="true">
+    <id name="IdColorimpresosa" column="id_colorimpresosa" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesColorimpresosa" column="des_colorimpresosa" type="string" />
+    <bag name="Impresora" inverse="true" lazy="true" cascade="delete">
+      <key column="id_colorimpresosa" />
+      <one-to-many class="Almacen.Data.Entities.Impresora,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

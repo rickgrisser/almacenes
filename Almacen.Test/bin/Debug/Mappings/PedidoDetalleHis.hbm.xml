@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.PedidoDetalleHis,Almacen.Data" table="pedido_detalle_his" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.PedidoDetalleHisId,Almacen.Data">
+      <key-many-to-one name="PedidoHist" class="Almacen.Data.Entities.PedidoHist,Almacen.Data">
+        <column name="id_pedido" />
+        <column name="mod_ped_hist" />
+      </key-many-to-one>
+      <key-property name="RenglonPedido" column="renglon_pedido" type="int" />
+    </composite-id>
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <property name="Marca" column="marca" type="string" />
+    <property name="Cantidad" column="cantidad" type="Decimal" />
+    <property name="PrecioUnitario" column="precio_unitario" type="Decimal" />
+    <bag name="PedidoEntregaHis" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_pedido" />
+        <column name="renglon_pedido" />
+        <column name="mod_ped_hist" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.PedidoEntregaHis,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

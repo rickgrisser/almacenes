@@ -1,0 +1,1014 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="txtPassword" priority="0" />
+      <Item value="using" priority="4" />
+      <Item value="System" priority="0" />
+      <Item value="Windows.Forms" priority="0" />
+      <Item value="if" priority="23" />
+      <Item value="FrmAlmacen`0" priority="9" />
+      <Item value="mnuSalidas" priority="0" />
+      <Item value="false" priority="67" />
+      <Item value="mnuInventarios" priority="0" />
+      <Item value="mnuRequisicion" priority="0" />
+      <Item value="mnuReportes" priority="0" />
+      <Item value="mnuCatModificar" priority="0" />
+      <Item value="mnuEntRpt" priority="0" />
+      <Item value="cmbActividad" priority="1" />
+      <Item value="dtFechaEntrada" priority="5" />
+      <Item value="true" priority="25" />
+      <Item value="cmbPresupuesto" priority="1" />
+      <Item value="cmbRecibio" priority="0" />
+      <Item value="cmbSuperviso" priority="0" />
+      <Item value="dgvEntradaDetalle" priority="0" />
+      <Item value="CatActividadDao" priority="1" />
+      <Item value="CatPresupuestoDao" priority="1" />
+      <Item value="CatPresupuesto`0" priority="0" />
+      <Item value="EntradaService" priority="8" />
+      <Item value="private" priority="30" />
+      <Item value="string" priority="146" />
+      <Item value="virtual" priority="0" />
+      <Item value="void" priority="20" />
+      <Item value="btnGuardar" priority="2" />
+      <Item value="txtNumeroEntrada" priority="7" />
+      <Item value="Fx`0" priority="25" />
+      <Item value="txtFactura" priority="0" />
+      <Item value="int" priority="56" />
+      <Item value="intNumeroEntrada" priority="0" />
+      <Item value="EntradaActual" priority="3" />
+      <Item value="bisEntrada" priority="1" />
+      <Item value="Habilita`0" priority="0" />
+      <Item value="bisEntradaDetalle" priority="0" />
+      <Item value="DesActividad" priority="0" />
+      <Item value="DesPresupuesto" priority="0" />
+      <Item value="_catactividad" priority="0" />
+      <Item value="_catpresupuesto" priority="0" />
+      <Item value="Entrada`0" priority="7" />
+      <Item value="as" priority="9" />
+      <Item value="List" priority="11" />
+      <Item value="EntradaDetalle`0" priority="13" />
+      <Item value="new" priority="34" />
+      <Item value="Entrada" priority="2" />
+      <Item value="Format" priority="2" />
+      <Item value="txtFolio" priority="4" />
+      <Item value="Estatus" priority="0" />
+      <Item value="Byte`0" priority="0" />
+      <Item value="byte" priority="0" />
+      <Item value="Entities" priority="39" />
+      <Item value="_idrecibe" priority="0" />
+      <Item value="_identrega" priority="0" />
+      <Item value="_idevatecno" priority="0" />
+      <Item value="_nombreentrga" priority="0" />
+      <Item value="_recibe" priority="1" />
+      <Item value="observaciones" priority="0" />
+      <Item value="_observaciones" priority="1" />
+      <Item value="protected" priority="182" />
+      <Item value="CatTipoanexotecnico`0" priority="1" />
+      <Item value="_statussoptec" priority="1" />
+      <Item value="CatTipoanexotecnico" priority="0" />
+      <Item value="_cattipoanexotecnico" priority="1" />
+      <Item value="_asignacionbien" priority="1" />
+      <Item value="Consumible`0" priority="0" />
+      <Item value="_consumible" priority="1" />
+      <Item value="CatSoftware`0" priority="2" />
+      <Item value="Cpu`0" priority="4" />
+      <Item value="_cpu" priority="1" />
+      <Item value="Monitor`0" priority="1" />
+      <Item value="_monitor" priority="0" />
+      <Item value="Teclado`0" priority="1" />
+      <Item value="_teclado" priority="0" />
+      <Item value="Impresora`0" priority="1" />
+      <Item value="_impresora" priority="1" />
+      <Item value="Dispositivo`0" priority="1" />
+      <Item value="_dispositivo" priority="1" />
+      <Item value="Ups`0" priority="1" />
+      <Item value="_ups" priority="1" />
+      <Item value="Mouse`0" priority="1" />
+      <Item value="_mouse" priority="1" />
+      <Item value="RestrictionExtensions`0" priority="0" />
+      <Item value="_proveedor" priority="5" />
+      <Item value="_cveart" priority="14" />
+      <Item value="_desart" priority="0" />
+      <Item value="_unidad" priority="10" />
+      <Item value="double" priority="54" />
+      <Item value="_pedida" priority="0" />
+      <Item value="_recibida" priority="0" />
+      <Item value="_preciounitario" priority="2" />
+      <Item value="_importe" priority="2" />
+      <Item value="_marca" priority="1" />
+      <Item value="_lote" priority="1" />
+      <Item value="_caducidad" priority="2" />
+      <Item value="Almacen" priority="6" />
+      <Item value="Data" priority="3" />
+      <Item value="RptsData" priority="0" />
+      <Item value="Folio" priority="5" />
+      <Item value="ModEntrada" priority="0" />
+      <Item value="FrmEntradaVale`0" priority="0" />
+      <Item value="var" priority="53" />
+      <Item value="object" priority="7" />
+      <Item value="obj" priority="1" />
+      <Item value="tmp" priority="2" />
+      <Item value="lstEntradaVale" priority="0" />
+      <Item value="else" priority="22" />
+      <Item value="cmbAnioEntrada" priority="5" />
+      <Item value="Fecha" priority="6" />
+      <Item value="Factura" priority="6" />
+      <Item value="DesArt" priority="0" />
+      <Item value="CveArt" priority="10" />
+      <Item value="Unidad" priority="5" />
+      <Item value="Recibida" priority="0" />
+      <Item value="PrecioUnitario" priority="3" />
+      <Item value="Lote" priority="1" />
+      <Item value="Caducidad" priority="1" />
+      <Item value="Proveedor" priority="3" />
+      <Item value="_tipopedido" priority="5" />
+      <Item value="Pedido" priority="1" />
+      <Item value="TipoPedido" priority="4" />
+      <Item value="Pedida" priority="1" />
+      <Item value="PedidoDetalle`0" priority="5" />
+      <Item value="re" priority="0" />
+      <Item value="Marca" priority="1" />
+      <Item value="null" priority="17" />
+      <Item value="entregaDetalle" priority="1" />
+      <Item value="_descuento" priority="1" />
+      <Item value="_iva" priority="3" />
+      <Item value="_recibio" priority="0" />
+      <Item value="_superviso" priority="0" />
+      <Item value="_capturo" priority="1" />
+      <Item value="Recibio" priority="0" />
+      <Item value="Superviso" priority="0" />
+      <Item value="Capturo" priority="1" />
+      <Item value="Descuento" priority="1" />
+      <Item value="Iva" priority="1" />
+      <Item value="DateTime`0" priority="56" />
+      <Item value="_area" priority="3" />
+      <Item value="_folio" priority="4" />
+      <Item value="_desarticulo" priority="12" />
+      <Item value="_cantidad" priority="8" />
+      <Item value="_costo" priority="4" />
+      <Item value="_numentrada" priority="0" />
+      <Item value="public" priority="3" />
+      <Item value="CanSelect" priority="0" />
+      <Item value="Select`0" priority="0" />
+      <Item value="switch" priority="4" />
+      <Item value="strOpcion" priority="2" />
+      <Item value="case" priority="10" />
+      <Item value="break" priority="10" />
+      <Item value="ImprimeEntradaVale`0" priority="0" />
+      <Item value="formaEntradaVale" priority="0" />
+      <Item value="SalidaService" priority="1" />
+      <Item value="DesArticulo" priority="8" />
+      <Item value="Cantidad" priority="4" />
+      <Item value="Costo" priority="2" />
+      <Item value="Area" priority="2" />
+      <Item value="NumEntrada" priority="0" />
+      <Item value="_fechaini" priority="7" />
+      <Item value="_cvepartida" priority="5" />
+      <Item value="_despartida" priority="7" />
+      <Item value="_presupuesto" priority="0" />
+      <Item value="_cuota" priority="0" />
+      <Item value="_otros" priority="0" />
+      <Item value="ArticuloPartida`0" priority="2" />
+      <Item value="df" priority="0" />
+      <Item value="dtFechaIni" priority="12" />
+      <Item value="dtFechaFin" priority="3" />
+      <Item value="DesPartida" priority="4" />
+      <Item value="entradaDetalle" priority="16" />
+      <Item value="Presupuesto" priority="0" />
+      <Item value="FechaIni" priority="1" />
+      <Item value="FechaFin" priority="0" />
+      <Item value="_tipopresupuesto" priority="1" />
+      <Item value="CvePartida" priority="2" />
+      <Item value="TipoPresupuesto" priority="0" />
+      <Item value="_es" priority="4" />
+      <Item value="Es" priority="1" />
+      <Item value="ImprimeSalidaPartida`0" priority="0" />
+      <Item value="_fechacierre" priority="0" />
+      <Item value="_medida" priority="2" />
+      <Item value="Double`0" priority="0" />
+      <Item value="_existencia" priority="3" />
+      <Item value="CierreService" priority="3" />
+      <Item value="dtFechaCierre" priority="0" />
+      <Item value="dtFechaActual" priority="0" />
+      <Item value="cmbAnio" priority="4" />
+      <Item value="txtPartida" priority="2" />
+      <Item value="CategoryAttribute`0" priority="0" />
+      <Item value="CatPartida`0" priority="6" />
+      <Item value="cmbMes" priority="4" />
+      <Item value="CatPartidaActual" priority="12" />
+      <Item value="cierre" priority="2" />
+      <Item value="Medida" priority="1" />
+      <Item value="Existencia" priority="1" />
+      <Item value="CostoPromedio`0" priority="0" />
+      <Item value="Importe" priority="0" />
+      <Item value="FechaCierre" priority="0" />
+      <Item value="IFilter`0" priority="0" />
+      <Item value="strPartida" priority="2" />
+      <Item value="Cierre`0" priority="2" />
+      <Item value="d" priority="0" />
+      <Item value="gf" priority="0" />
+      <Item value="DataGridViewAutoSizeRowMode`0" priority="0" />
+      <Item value="t" priority="0" />
+      <Item value="lblDesPartida" priority="1" />
+      <Item value="ad" priority="1" />
+      <Item value="sf" priority="0" />
+      <Item value="ner" priority="0" />
+      <Item value="Business" priority="0" />
+      <Item value="ModSalida" priority="0" />
+      <Item value="SalidaDetalleDao" priority="0" />
+      <Item value="CierrePaso`0" priority="1" />
+      <Item value="CierrePasoDao" priority="2" />
+      <Item value="CierreDao" priority="2" />
+      <Item value="ICierreDao`0" priority="0" />
+      <Item value="Assert`0" priority="3" />
+      <Item value="lst" priority="0" />
+      <Item value="CurrentSession" priority="2" />
+      <Item value="IList" priority="2" />
+      <Item value="foreach" priority="1" />
+      <Item value="AssemblyLoadEventArgs`0" priority="0" />
+      <Item value="ApplicationId`0" priority="0" />
+      <Item value="Application`0" priority="0" />
+      <Item value="strVersion" priority="0" />
+      <Item value="AlmacenDao" priority="1" />
+      <Item value="objectse" priority="0" />
+      <Item value="decimal" priority="10" />
+      <Item value="SalidaDetalle`0" priority="1" />
+      <Item value="er" priority="1" />
+      <Item value="EntradaDetalleDao" priority="2" />
+      <Item value="ent" priority="0" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="Pedido`0" priority="1" />
+      <Item value="long" priority="83" />
+      <Item value="short" priority="12" />
+      <Item value="this" priority="10" />
+      <Item value="PedidoDetalle" priority="0" />
+      <Item value="return" priority="18" />
+      <Item value="Requisicion`0" priority="2" />
+      <Item value="Requisicion" priority="0" />
+      <Item value="_renglon" priority="1" />
+      <Item value="entrada" priority="6" />
+      <Item value="_entrada" priority="1" />
+      <Item value="_renglonentrada" priority="1" />
+      <Item value="Salida`0" priority="0" />
+      <Item value="Salida" priority="0" />
+      <Item value="_renglonsalida" priority="1" />
+      <Item value="ResguardoEntrega`0" priority="3" />
+      <Item value="EntradaDetalle" priority="0" />
+      <Item value="resguardoEntrega" priority="1" />
+      <Item value="_inventario" priority="1" />
+      <Item value="_consecutivo" priority="1" />
+      <Item value="ResguardoEntregaDetalle`0" priority="23" />
+      <Item value="resguardoentregadetalle" priority="3" />
+      <Item value="ResguardoEntregaDetalle" priority="6" />
+      <Item value="idresguardoentregadetalle" priority="0" />
+      <Item value="resguardoEntregaDetalle" priority="0" />
+      <Item value="IdEntradaDetalle" priority="2" />
+      <Item value="Anexo`0" priority="4" />
+      <Item value="i" priority="0" />
+      <Item value="salida" priority="3" />
+      <Item value="List&lt;SalidaDetalle&gt;" priority="0" />
+      <Item value="intRenglon" priority="0" />
+      <Item value="tlpAnio" priority="2" />
+      <Item value="CargaFallos`0" priority="0" />
+      <Item value="dtFechaRequisicion" priority="4" />
+      <Item value="FechaActual`0" priority="7" />
+      <Item value="dtFechaSalida" priority="5" />
+      <Item value="txtVoBo" priority="2" />
+      <Item value="objTmp" priority="0" />
+      <Item value="Cotizacion`0" priority="1" />
+      <Item value="_renglonanexo" priority="1" />
+      <Item value="Anexo" priority="0" />
+      <Item value="_anexo" priority="0" />
+      <Item value="Fallo`0" priority="1" />
+      <Item value="_rengloanexo" priority="1" />
+      <Item value="Fallo" priority="0" />
+      <Item value="_fallo" priority="1" />
+      <Item value="crVisor" priority="2" />
+      <Item value="bool" priority="2" />
+      <Item value="bolOpcion" priority="0" />
+      <Item value="rbtnCExistencia" priority="0" />
+      <Item value="dtFecha" priority="5" />
+      <Item value="dtActual" priority="4" />
+      <Item value="CargaFolioNuevo`0" priority="3" />
+      <Item value="cmbArea" priority="10" />
+      <Item value="CatArea`0" priority="11" />
+      <Item value="SalidaActual" priority="1" />
+      <Item value="txtNumeroSalida" priority="7" />
+      <Item value="bisSalidaDetalle" priority="0" />
+      <Item value="bisSalida" priority="0" />
+      <Item value="txtCveArea" priority="3" />
+      <Item value="_numerosalida" priority="2" />
+      <Item value="RequisicionActual" priority="0" />
+      <Item value="txtNumeroRequisicion" priority="0" />
+      <Item value="_numerorequisicion" priority="1" />
+      <Item value="_fecha" priority="3" />
+      <Item value="_licitacion" priority="3" />
+      <Item value="rd" priority="0" />
+      <Item value="RequisicionService" priority="0" />
+      <Item value="rptDataRequisicionVale`0" priority="0" />
+      <Item value="NumeroRequisicion" priority="0" />
+      <Item value="requisicionDetalle" priority="1" />
+      <Item value="Almacen`0" priority="13" />
+      <Item value="EndInvoke`0" priority="0" />
+      <Item value="default" priority="0" />
+      <Item value="Licitacion" priority="1" />
+      <Item value="Close`0" priority="4" />
+      <Item value="Show`0" priority="1" />
+      <Item value="mnuEntAfectacionesSP" priority="0" />
+      <Item value="mnuEntImpresion" priority="0" />
+      <Item value="FrmMenu`0" priority="0" />
+      <Item value="far" priority="0" />
+      <Item value="bolFlag" priority="2" />
+      <Item value="_partida" priority="4" />
+      <Item value="_fechafin" priority="6" />
+      <Item value="_cuadrobasico" priority="1" />
+      <Item value="_desproveedor" priority="2" />
+      <Item value="_tipoadquisicion" priority="0" />
+      <Item value="_factura" priority="7" />
+      <Item value="_numpedido" priority="4" />
+      <Item value="objAlmacen" priority="1" />
+      <Item value="btnImprimir" priority="2" />
+      <Item value="FrmSelectDayToDayPart`0" priority="0" />
+      <Item value="CuadroBasico`0" priority="0" />
+      <Item value="Convert`0" priority="6" />
+      <Item value="DesProveedor" priority="1" />
+      <Item value="NumPedido" priority="3" />
+      <Item value="_pedido" priority="3" />
+      <Item value="TipoAdquisicion" priority="0" />
+      <Item value="mnuEntRptIfai" priority="0" />
+      <Item value="Test" priority="0" />
+      <Item value="char" priority="0" />
+      <Item value="_presentacion" priority="1" />
+      <Item value="_presentacioncant" priority="1" />
+      <Item value="_presentacionunid" priority="1" />
+      <Item value="_cantentrada" priority="1" />
+      <Item value="_cantsalida" priority="1" />
+      <Item value="_precioentrada" priority="1" />
+      <Item value="_preciosalida" priority="1" />
+      <Item value="_haber" priority="1" />
+      <Item value="static" priority="0" />
+      <Item value="Item`0" priority="1" />
+      <Item value="lstMeses" priority="0" />
+      <Item value="NombreMes`0" priority="0" />
+      <Item value="for" priority="3" />
+      <Item value="FrmSelectYearFolio`0" priority="2" />
+      <Item value="Limpiar`0" priority="1" />
+      <Item value="CatPartida" priority="0" />
+      <Item value="txtArtIni" priority="7" />
+      <Item value="txtArtFin" priority="6" />
+      <Item value="DateTime" priority="0" />
+      <Item value="Text" priority="0" />
+      <Item value="Int32`0" priority="4" />
+      <Item value="kardex" priority="3" />
+      <Item value="kardexDetalle" priority="6" />
+      <Item value="Presentacion" priority="0" />
+      <Item value="PresentacionCant" priority="0" />
+      <Item value="PresentacionUnid" priority="0" />
+      <Item value="ArticuloId`0" priority="1" />
+      <Item value="CantEntrada" priority="1" />
+      <Item value="PrecioEntrada" priority="1" />
+      <Item value="PrecioSalida" priority="1" />
+      <Item value="intTmp" priority="3" />
+      <Item value="intCveArt" priority="1" />
+      <Item value="douExistencia" priority="1" />
+      <Item value="Debe" priority="1" />
+      <Item value="Haber" priority="1" />
+      <Item value="douSaldo" priority="3" />
+      <Item value="_saldo" priority="1" />
+      <Item value="rptDataKardex`0" priority="0" />
+      <Item value="lstKardex" priority="0" />
+      <Item value="CierreId`0" priority="0" />
+      <Item value="Articulo" priority="0" />
+      <Item value="idCierre" priority="0" />
+      <Item value="objCierre" priority="7" />
+      <Item value="objArticulo" priority="9" />
+      <Item value="CantSalida" priority="2" />
+      <Item value="Saldo" priority="0" />
+      <Item value="Cierre" priority="5" />
+      <Item value="fixed" priority="1" />
+      <Item value="EnvironmentVariableTarget`0" priority="0" />
+      <Item value="ImprimeKardex`0" priority="0" />
+      <Item value="cr08" priority="0" />
+      <Item value="_FechaRequisicion" priority="0" />
+      <Item value="_numPedido" priority="1" />
+      <Item value="_fechaPedido" priority="1" />
+      <Item value="rptDataPedidosGenerados`0" priority="0" />
+      <Item value="NumRequisicion" priority="0" />
+      <Item value="FechaRequisicion" priority="0" />
+      <Item value="FechaPedido" priority="1" />
+      <Item value="Partida" priority="2" />
+      <Item value="mnuRptPedidosGenerados" priority="0" />
+      <Item value="_total" priority="2" />
+      <Item value="_fechapedido" priority="0" />
+      <Item value="_precio" priority="0" />
+      <Item value="IdAlmacen" priority="0" />
+      <Item value="Desproveedor" priority="0" />
+      <Item value="Total" priority="0" />
+      <Item value="rptEntradaFolioPartida`0" priority="0" />
+      <Item value="cr10" priority="0" />
+      <Item value="Precio" priority="0" />
+      <Item value="chkEntradaFecha" priority="1" />
+      <Item value="strEntradaFecha" priority="5" />
+      <Item value="query" priority="1" />
+      <Item value="strSQL" priority="0" />
+      <Item value="txtFacturaFin" priority="1" />
+      <Item value="cmbTipoPedido" priority="4" />
+      <Item value="blnFlag" priority="1" />
+      <Item value="txtEntradaIni" priority="4" />
+      <Item value="txtEntradaFin" priority="2" />
+      <Item value="Int64`0" priority="1" />
+      <Item value="strEntradaFolio" priority="2" />
+      <Item value="strEntradaFactura" priority="0" />
+      <Item value="chkFactura" priority="0" />
+      <Item value="txtFacturaIni" priority="2" />
+      <Item value="strSituacion" priority="2" />
+      <Item value="_status" priority="1" />
+      <Item value="Status" priority="0" />
+      <Item value="chkPedidoTipo" priority="2" />
+      <Item value="strTipoPedido" priority="5" />
+      <Item value="CatTipopedido`0" priority="5" />
+      <Item value="objCatTipopedido" priority="0" />
+      <Item value="dtFechaPedidoIni" priority="1" />
+      <Item value="dtFechaPedidoFin" priority="1" />
+      <Item value="strPedidoFecha" priority="2" />
+      <Item value="txtPedidoIni" priority="2" />
+      <Item value="txtPedidoFin" priority="2" />
+      <Item value="chkPedidoFecha" priority="2" />
+      <Item value="strPedidoFolio" priority="1" />
+      <Item value="label2" priority="0" />
+      <Item value="chkArea" priority="2" />
+      <Item value="lblArea" priority="1" />
+      <Item value="chkPedidoFolio" priority="1" />
+      <Item value="lblPedidoTipo" priority="1" />
+      <Item value="lblPedidoFecha" priority="0" />
+      <Item value="lblPedidoFolio" priority="2" />
+      <Item value="intRow" priority="1" />
+      <Item value="MeasureItemEventArgs`0" priority="0" />
+      <Item value="strSalidaFecha" priority="1" />
+      <Item value="strSalidaFolio" priority="1" />
+      <Item value="strCatArea" priority="1" />
+      <Item value="_intfoliopedido" priority="0" />
+      <Item value="_strtipopedido" priority="0" />
+      <Item value="_intfolioentrada" priority="0" />
+      <Item value="_fechaentrada" priority="1" />
+      <Item value="_strdesarticulo" priority="1" />
+      <Item value="_strunidad" priority="0" />
+      <Item value="_costounit" priority="1" />
+      <Item value="FrmSelectDayToDayCat`0" priority="0" />
+      <Item value="Proveedor`0" priority="7" />
+      <Item value="txtProveedor" priority="2" />
+      <Item value="cmbProveedor" priority="4" />
+      <Item value="ProveedorActual" priority="4" />
+      <Item value="intFolioPedido" priority="0" />
+      <Item value="intFolioEntrada" priority="0" />
+      <Item value="FechaEntrada" priority="1" />
+      <Item value="CostoUnit" priority="0" />
+      <Item value="rptEntradaProveedor`0" priority="0" />
+      <Item value="_folioentrada" priority="2" />
+      <Item value="_foliopedido" priority="0" />
+      <Item value="FolioEntrada" priority="1" />
+      <Item value="FolioPedido" priority="0" />
+      <Item value="_infopedido" priority="0" />
+      <Item value="_cantidadpedida" priority="0" />
+      <Item value="_cantidadrecibida" priority="0" />
+      <Item value="_cantidadxrecibir" priority="0" />
+      <Item value="_costounitario" priority="0" />
+      <Item value="FrmSelectYearFolioCat`0" priority="0" />
+      <Item value="sd" priority="0" />
+      <Item value="InfoPedido" priority="0" />
+      <Item value="entradadetalle" priority="2" />
+      <Item value="CantidadPedida" priority="0" />
+      <Item value="CostoUnitario" priority="0" />
+      <Item value="CantidadRecibida" priority="0" />
+      <Item value="Articulo`0" priority="2" />
+      <Item value="CantidadxRecibir" priority="0" />
+      <Item value="_desarea" priority="0" />
+      <Item value="_enero" priority="0" />
+      <Item value="_febrero" priority="0" />
+      <Item value="_marzo" priority="0" />
+      <Item value="_abril" priority="0" />
+      <Item value="_mayo" priority="0" />
+      <Item value="Junio" priority="1" />
+      <Item value="_julio" priority="0" />
+      <Item value="_agosto" priority="0" />
+      <Item value="_septiembre" priority="0" />
+      <Item value="_octubre" priority="0" />
+      <Item value="_noviembre" priority="0" />
+      <Item value="_diciembre" priority="0" />
+      <Item value="lblCat1" priority="0" />
+      <Item value="txtCat2" priority="0" />
+      <Item value="lblDesCat2" priority="0" />
+      <Item value="strArea" priority="1" />
+      <Item value="CatAreaActual" priority="2" />
+      <Item value="rptDataSalidaArea`0" priority="0" />
+      <Item value="Enero" priority="0" />
+      <Item value="Marzo" priority="0" />
+      <Item value="Abril" priority="0" />
+      <Item value="Mayo" priority="0" />
+      <Item value="Julio" priority="0" />
+      <Item value="Agosto" priority="0" />
+      <Item value="Septiembre" priority="0" />
+      <Item value="Octubre" priority="0" />
+      <Item value="Noviembre" priority="0" />
+      <Item value="Diciembre" priority="0" />
+      <Item value="DesArea" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="16" />
+      <Item value="TextLength" priority="5" />
+      <Item value="Focus`0" priority="12" />
+      <Item value="Enabled" priority="3" />
+      <Item value="Enter" priority="0" />
+      <Item value="SelectedText" priority="0" />
+      <Item value="SelectAll`0" priority="0" />
+      <Item value="TextChanged" priority="1" />
+      <Item value="Tag" priority="0" />
+      <Item value="Visible" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Almacen.Business.Util">
+      <Item value="ReverseString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="Parse`0" priority="13" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.NumericUpDown">
+      <Item value="Text" priority="0" />
+      <Item value="Value" priority="9" />
+      <Item value="Minimum" priority="1" />
+      <Item value="Maximum" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="32" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Almacen.View.FrmAlmacen">
+      <Item value="AlmacenActual" priority="7" />
+      <Item value="ActiveForm" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Almacen">
+      <Item value="IdAlmacen" priority="3" />
+      <Item value="DesAlmacen" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Contains`0" priority="0" />
+      <Item value="Length" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ToolStripMenuItem">
+      <Item value="Enabled" priority="0" />
+      <Item value="Visible" priority="10" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="DataBindings" priority="0" />
+      <Item value="Enabled" priority="4" />
+      <Item value="Items" priority="0" />
+      <Item value="Text" priority="1" />
+      <Item value="DataSource" priority="3" />
+      <Item value="SelectedValue" priority="7" />
+      <Item value="SelectedIndex" priority="0" />
+      <Item value="Validated" priority="0" />
+      <Item value="Visible" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ControlBindingsCollection">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DataGridView">
+      <Item value="Enabled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.Catalogos.ICatActividadDao">
+      <Item value="CargaActividad`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.CatActividad">
+      <Item value="DesActividad" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.Catalogos.ICatPresupuestoDao">
+      <Item value="CargaPresupuesto`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.CatPresupuesto">
+      <Item value="DesPresupuesto" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Business.ModEntrada.IEntradaService">
+      <Item value="CatActividad`0" priority="0" />
+      <Item value="CatPresupuesto`0" priority="0" />
+      <Item value="EntradaDao" priority="1" />
+      <Item value="EntradaDetalleDao" priority="0" />
+      <Item value="ArticuloDao" priority="1" />
+      <Item value="CierreDao" priority="0" />
+      <Item value="CatTipoPedidos`0" priority="0" />
+      <Item value="SituacionCombo`0" priority="0" />
+      <Item value="CargaProveedor`0" priority="0" />
+      <Item value="CargaProveedores`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Button">
+      <Item value="Enabled" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Almacen.View.Fx">
+      <Item value="OnNumeric`0" priority="12" />
+      <Item value="OnKeyTab`0" priority="10" />
+      <Item value="Meses`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModEntrada.IEntradaDao">
+      <Item value="FechaServidor`0" priority="0" />
+      <Item value="CargaSoloEntrada`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="Year" priority="20" />
+      <Item value="Minute" priority="0" />
+      <Item value="Month" priority="6" />
+      <Item value="Day" priority="8" />
+      <Item value="ToShortDateString`0" priority="3" />
+      <Item value="AddDays`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.BindingSource">
+      <Item value="DataSource" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Entrada">
+      <Item value="EntradaDetalle" priority="2" />
+      <Item value="Pedido" priority="6" />
+      <Item value="Modificacion" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DateTimePicker">
+      <Item value="Enabled" priority="6" />
+      <Item value="Value" priority="21" />
+      <Item value="MinDate" priority="0" />
+      <Item value="Focus`0" priority="0" />
+      <Item value="Visible" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.ResguardoEntregaDetalle">
+      <Item value="_observaciones" priority="0" />
+      <Item value="_idresguardoentregadetalle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ICriteria">
+      <Item value="Add`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NHibernate.Criterion.Restrictions">
+      <Item value="Eq`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.IQuery">
+      <Item value="List`1" priority="0" />
+      <Item value="SetParameter`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModEntrada.IEntradaDetalleDao">
+      <Item value="RptEntradaVale`0" priority="1" />
+      <Item value="RptEntradaPartida`0" priority="0" />
+      <Item value="RptEntradaIFAI`0" priority="0" />
+      <Item value="Kardex`0" priority="0" />
+      <Item value="RptKardex`0" priority="0" />
+      <Item value="RptEntradaProveedor`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBoxIcon">
+      <Item value="Information" priority="0" />
+      <Item value="Error" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Count" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToDouble`0" priority="10" />
+      <Item value="ToDecimal`0" priority="0" />
+      <Item value="ToInt64`0" priority="1" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="ToInt16`0" priority="0" />
+      <Item value="ToDateTime`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.EntradaDetalle">
+      <Item value="Id" priority="4" />
+      <Item value="SalidaDetalle" priority="0" />
+      <Item value="Articulo" priority="0" />
+      <Item value="_entrada" priority="0" />
+      <Item value="_unidad" priority="0" />
+      <Item value="IdEntradaDetalle" priority="2" />
+      <Item value="Entrada" priority="1" />
+      <Item value="RenglonEntrada" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.EntradaDetalleId">
+      <Item value="Entrada" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Pedido">
+      <Item value="Proveedor" priority="0" />
+      <Item value="PedidoDetalle" priority="2" />
+      <Item value="IdPedido" priority="1" />
+      <Item value="Entrada" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Proveedor">
+      <Item value="NombreFiscal" priority="3" />
+      <Item value="CveProveedor" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.PedidoDetalle">
+      <Item value="Pedido" priority="1" />
+      <Item value="Id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.PedidoDetalleId">
+      <Item value="Pedido" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.View.FrmEntradaVale">
+      <Item value="strOpcion" priority="0" />
+      <Item value="Text" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Business.ModSalida.ISalidaService">
+      <Item value="SalidaDetalleDao" priority="1" />
+      <Item value="CargaArea`0" priority="0" />
+      <Item value="CargaAreas`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModSalida.ISalidaDetalleDao">
+      <Item value="RptSalidaVale`0" priority="0" />
+      <Item value="RptSalidaPartida`0" priority="1" />
+      <Item value="RptSalidaArea`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.ArticuloPartida">
+      <Item value="Id" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.ArticuloPartidaId">
+      <Item value="CatPartida" priority="2" />
+      <Item value="Articulo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.CatPartida">
+      <Item value="DesPartida" priority="3" />
+      <Item value="Partida" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Business.ModCierre.ICierreService">
+      <Item value="CierreDao" priority="2" />
+      <Item value="ArticuloDao" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModCierre.ICierreDao">
+      <Item value="FechaServidor`0" priority="0" />
+      <Item value="RptCierre`0" priority="1" />
+      <Item value="CargaCierrexArticulo`0" priority="0" />
+      <Item value="Get`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Cierre">
+      <Item value="Id" priority="1" />
+      <Item value="Existencia" priority="1" />
+      <Item value="Importe" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.CierreId">
+      <Item value="Articulo" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Articulo">
+      <Item value="ArticuloPartida" priority="1" />
+      <Item value="Id" priority="5" />
+      <Item value="CatUnidad" priority="3" />
+      <Item value="DesArticulo" priority="5" />
+      <Item value="Presentacion" priority="0" />
+      <Item value="PresentacionCant" priority="0" />
+      <Item value="PresentacionUnid" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="4" />
+      <Item value="Visible" priority="8" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="9" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModCierre.ICierrePasoDao">
+      <Item value="BorraCierrePaso`0" priority="0" />
+      <Item value="CargaCierrePaso`0" priority="0" />
+      <Item value="DeleteAll`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModCatalogos.IArticuloDao">
+      <Item value="CargaArticulosXAlmacen`0" priority="0" />
+      <Item value="CargaArticulo`0" priority="0" />
+      <Item value="Get`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="AreEqual`0" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.ArticuloId">
+      <Item value="CveArt" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISession">
+      <Item value="CreateCriteria`0" priority="0" />
+      <Item value="Delete`0" priority="0" />
+      <Item value="CreateQuery`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="ProductVersion" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Deployment.Application.ApplicationDeployment">
+      <Item value="CurrentDeployment" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Deployment.Application.ApplicationDeployment">
+      <Item value="CurrentVersion" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Version">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.Catalogos.IAlmacenDao">
+      <Item value="Get`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.SalidaDetalle">
+      <Item value="CatPresupuesto" priority="0" />
+      <Item value="RenglonSalida" priority="0" />
+      <Item value="Salida" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.PedidoEntrega">
+      <Item value="_pedidodetalle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.ResguardoEntrega">
+      <Item value="_id" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.AsignacionBien">
+      <Item value="_idasignacionbien" priority="0" />
+      <Item value="_resguardoentregadetalle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Cpu">
+      <Item value="_resguardoentregadetalle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Teclado">
+      <Item value="_idresguardoentregadetalle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Impresora">
+      <Item value="_velocidad" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Monitor">
+      <Item value="_usuario" priority="0" />
+      <Item value="_resguardoentregadetalle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Parse`0" priority="3" />
+      <Item value="Compare`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Salida">
+      <Item value="SalidaDetalle" priority="2" />
+      <Item value="Modificacion" priority="1" />
+      <Item value="CatArea" priority="0" />
+      <Item value="NumeroSalida" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.Requisicion">
+      <Item value="RequisicionDetall" priority="0" />
+      <Item value="CatArea" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.RequisicionDetall">
+      <Item value="Requisicion" priority="1" />
+      <Item value="Articulo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TableLayoutPanel">
+      <Item value="Enabled" priority="2" />
+      <Item value="Visible" priority="2" />
+      <Item value="GetControlFromPosition`0" priority="0" />
+      <Item value="RowStyles" priority="0" />
+      <Item value="ColumnCount" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:CrystalDecisions.Windows.Forms.CrystalReportViewer">
+      <Item value="Zoom`0" priority="0" />
+      <Item value="ShowGroupTree`0" priority="0" />
+      <Item value="ShowLogo" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.RadioButton">
+      <Item value="Checked" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox+ObjectCollection">
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Business.ModRequisicion.IRequisicionService">
+      <Item value="RequisicionDetallDao" priority="0" />
+      <Item value="PedidoDetalleDao" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModRequisicion.IRequisicionDetallDao">
+      <Item value="RptRequisicionVale`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.RptsClass.rptDataRequisicionVale">
+      <Item value="NumeroRequisicion" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.View.FrmMenu">
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="CancelButton" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.IButtonControl">
+      <Item value="DialogResult" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.RptsClass.rptDataKardex">
+      <Item value="Existencia" priority="1" />
+      <Item value="Saldo" priority="2" />
+      <Item value="CantEntrada" priority="0" />
+      <Item value="PrecioEntrada" priority="0" />
+      <Item value="Debe" priority="0" />
+      <Item value="Haber" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.Catalogos.IPedidoDetalleDao">
+      <Item value="RptPedidosGenerados`0" priority="0" />
+      <Item value="RptEntradaPedido`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.CheckBox">
+      <Item value="Checked" priority="1" />
+      <Item value="Visible" priority="7" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int64">
+      <Item value="Parse`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.Catalogos.ICatTipopedidoDao">
+      <Item value="CargaTipoPedidos`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.CatTipopedido">
+      <Item value="DesTipoped" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.RowStyle">
+      <Item value="Height" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.View.FrmDetallado">
+      <Item value="Height" priority="0" />
+      <Item value="Size" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Size">
+      <Item value="Height" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Dao.ModCatalogos.IProveedorDao">
+      <Item value="CargaProveedor`0" priority="0" />
+      <Item value="CargaProveedores`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Almacen.Data.Entities.CatArea">
+      <Item value="DesArea" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Mappings/f:Entrada.hbm.xml" caret="0" fromTop="0" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Mappings/f:PedidoDetalle.hbm.xml" caret="0" fromTop="0" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:RptsClass/f:rptDataEntradaPedido.cs" caret="166" fromTop="8" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Mappings/f:EntradaDetalle.hbm.xml" caret="1033" fromTop="17" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Mappings/f:CatPartida.hbm.xml" caret="0" fromTop="0" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:RptsClass/f:rptDataCierre.cs" caret="671" fromTop="24" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:RptsClass/f:rptDataEntradaDetallado.cs" caret="0" fromTop="0" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDayCat.cs" caret="6786" fromTop="135" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.Designer.cs" caret="13132" fromTop="32" />
+      <File id="71C65670-62AB-4AA4-9D9F-01A2D6F425B9/d:ModEntrada/f:IEntradaService.cs" caret="0" fromTop="0" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSalida.cs" caret="0" fromTop="0" />
+      <File id="71C65670-62AB-4AA4-9D9F-01A2D6F425B9/d:ModSalida/f:SalidaServiceImp.cs" caret="1066" fromTop="16" />
+      <File id="71C65670-62AB-4AA4-9D9F-01A2D6F425B9/d:ModSalida/f:ISalidaService.cs" caret="986" fromTop="17" />
+      <File id="71C65670-62AB-4AA4-9D9F-01A2D6F425B9/f:Services.xml" caret="1999" fromTop="24" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModEntrada/f:IEntradaDetalleDao.cs" caret="1914" fromTop="15" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModEntrada/f:EntradaDetalleDaoImp.cs" caret="10348" fromTop="33" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDayPart.cs" caret="2704" fromTop="0" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:HQueries/f:EntradaDetalle.hbm.xml" caret="7046" fromTop="25" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Mappings/f:ArticuloPartida.hbm.xml" caret="0" fromTop="0" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Mappings/f:Articulo.hbm.xml" caret="635" fromTop="9" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:ISalidaDetalleDao.cs" caret="1417" fromTop="22" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmAcceso.cs" caret="548" fromTop="18" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Mappings/f:Salida.hbm.xml" caret="917" fromTop="15" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:HQueries/f:SalidaDetalle.hbm.xml" caret="2070" fromTop="23" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmMenu.cs" caret="7772" fromTop="19" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectYearFolioCat.cs" caret="2790" fromTop="14" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:RptsClass/f:rptDataSalidaArea.cs" caret="2227" fromTop="25" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmCrVisor.cs" caret="5819" fromTop="24" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="8063" fromTop="33" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="9182" fromTop="39" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:HQueries/f:SalidaDetalle.hbm.xml" caret="4498" fromTop="23" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7608" fromTop="24" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7598" fromTop="21" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7597" fromTop="26" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7917" fromTop="30" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7626" fromTop="22" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="1763" fromTop="17" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="8110" fromTop="14" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10925" fromTop="27" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="11022" fromTop="31" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="8165" fromTop="17" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10777" fromTop="29" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10596" fromTop="24" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="1747" fromTop="16" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="6016" fromTop="22" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="6016" fromTop="22" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="6016" fromTop="18" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7236" fromTop="13" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7038" fromTop="19" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="5809" fromTop="7" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmCrVisor.cs" caret="6012" fromTop="25" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10529" fromTop="31" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10424" fromTop="30" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:RptsClass/f:rptDataSalidaArea.cs" caret="2227" fromTop="25" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10462" fromTop="31" />
+      <File id="FE9B2D63-2978-467A-99DE-B8CF6914B355/d:Dao/d:ModSalida/f:SalidaDetalleDaoImp.cs" caret="7575" fromTop="17" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmCrVisor.cs" caret="5819" fromTop="24" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10478" fromTop="25" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="10527" fromTop="25" />
+      <File id="518A23A5-B8FE-4975-A564-27DAA06680B1/f:frmSelectDayToDay2Cat.cs" caret="8886" fromTop="13" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files\NUnit 2.5.10\bin\net-2.0\</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Monitor,Almacen.Data" table="monitor" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.MonitorId,Almacen.Data">
+      <key-property name="IdMonitor" column="id_monitor" type="string" />
+      <key-many-to-one name="ResguardoEntregaDetalle" class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data">
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+        <column name="inventario" />
+        <column name="consecutivo" />
+      </key-many-to-one>
+    </composite-id>-->
+    <id name="IdMonitor" column="id_monitor" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="ResguardoEntregaDetalle" class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data" column="id_resguardoentregadetalle" />
+    <many-to-one name="CatResmonitor" column="id_resmonitor" cascade="save-update" />
+    <property name="Tamano" column="tamano" type="Decimal" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+  </class>
+</hibernate-mapping>

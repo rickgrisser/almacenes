@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ReqDetHist,Almacen.Data" table="req_det_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ReqDetHistId,Almacen.Data">
+      <key-many-to-one name="RequisicionHist" class="Almacen.Data.Entities.RequisicionHist,Almacen.Data">
+        <column name="id_requisicion" />
+        <column name="mod_requisicion" />
+      </key-many-to-one>
+      <key-property name="Renglon" column="renglon" type="short" />
+    </composite-id>
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <property name="Cantidad" column="cantidad" type="Decimal" />
+  </class>
+</hibernate-mapping>

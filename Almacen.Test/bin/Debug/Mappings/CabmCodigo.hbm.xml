@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CabmCodigo,Almacen.Data" table="cabm_codigo" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.CabmCodigoId,Almacen.Data">
+      <key-property name="IdCodigo" column="id_codigo" type="string" />
+      <key-many-to-one name="CabmSubclase" class="Almacen.Data.Entities.CabmSubclase,Almacen.Data">
+        <column name="id_subclase" />
+        <column name="id_clase" />
+        <column name="id_subgrupo" />
+        <column name="id_grupo" />
+      </key-many-to-one>
+    </composite-id>
+    <property name="DesCodigo" column="des_codigo" type="string"/>
+    <bag name="Cabms" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_codigo" />
+        <column name="id_subclase" />
+        <column name="id_clase" />
+        <column name="id_subgrupo" />
+        <column name="id_grupo" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Cabms,Almacen.Data" />
+    </bag>
+    <!--Add block-->
+    <many-to-one name="CabmSubclase"  cascade="save-update" not-null="true" >
+      <column name="id_subclase" />
+      <column name="id_clase" />
+      <column name="id_subgrupo" />
+      <column name="id_grupo" />
+    </many-to-one>
+  </class>
+  <query name="CabmCodigo.Codigo" >
+    <![CDATA[from CabmCodigo c where c.CabmSubclase.DesSubclase=:subclase]]>
+  </query>
+  <query name="CabmCodigo.Armado">
+    <!--<![CDATA[from CabmCodigo c where c.DesCodigo=:codigo]]>-->
+    <![CDATA[select concat(c.CabmSubclase.CabmClase.CabmSubgrupo.CabmGrupo.IdGrupo,
+                c.CabmSubclase.CabmClase.CabmSubgrupo.Id.IdSubgrupo,
+                c.CabmSubclase.CabmClase.Id.IdClase,
+                c.CabmSubclase.Id.IdSubclase,
+                c.Id.IdCodigo) 
+                from CabmCodigo c where c.DesCodigo=:codigo]]>
+  </query>
+</hibernate-mapping>

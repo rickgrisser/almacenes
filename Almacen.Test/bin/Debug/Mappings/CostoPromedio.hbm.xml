@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CostoPromedio,Almacen.Data" table="costo_promedio" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.CostoPromedioId,Almacen.Data">
+      <key-many-to-one name="Articulo" class="Almacen.Data.Entities.Articulo,Almacen.Data">
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key-many-to-one>
+      <!--<key-many-to-one name="Almacen" class="Almacen.Data.Entities.Almacen,Almacen.Data" column="id_almacen" />-->
+    </composite-id>
+    <property name="CostoPromedioMember" column="costo_promedio" type="Decimal" />   
+  </class>
+</hibernate-mapping>

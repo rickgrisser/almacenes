@@ -1,0 +1,141 @@
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.xml
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.pdb
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\Castle.Core.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\IBM.Data.Informix.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\Iesi.Collections.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\LinFu.DynamicProxy.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\log4net.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosMap.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosMap.pdb
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Castle.Core.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Castle.DynamicProxy2.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\IBM.Data.Informix.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Iesi.Collections.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\log4net.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\obj\Debug\ResolveAssemblyReference.cache
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Data.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Data.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Dao\NHibernate.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Core.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Aop.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.NHibernate30.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.Validator.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Business.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.Microsoft.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.NUnit.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\nunit.framework.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Business.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Aop.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Aop.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Core.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Core.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.NHibernate30.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.NHibernate30.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.Microsoft.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.Microsoft.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.NUnit.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.NUnit.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\nunit.framework.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\nunit.core.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\nunit.core.interfaces.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Common.Logging.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Common.Logging.Log4Net.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.dll.config
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Services.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Dao\Dao.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Antlr3.Runtime.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.View.exe
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.View.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysCatalogos.hbm.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysUtil.hbm.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysPresupuestoInicial.hbm.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysEstructuraProgramatica.hbm.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysAdecuaciones.hbm.xml
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysReseva.hbm.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Services.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Dao\Dao.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Dao\NHibernate.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysReseva.hbm.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysAdecuaciones.hbm.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysPresupuestoInicial.hbm.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysCatalogos.hbm.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysEstructuraProgramatica.hbm.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Querys\QuerysUtil.hbm.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.dll.config
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.dll
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\IBM.Data.Informix.dll
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\nunit.framework.dll
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Business.dll
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Data.dll
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.View.exe
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Antlr3.Runtime.dll
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Business.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Data.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.View.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\nunit.framework.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Aop.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Aop.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Core.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Core.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.NHibernate30.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.NHibernate30.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.Microsoft.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.Microsoft.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.NUnit.pdb
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.NUnit.xml
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\obj\Debug\ResolveAssemblyReference.cache
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.dll
+C:\VHD\VHD0\Desarrollo\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.dll
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\obj\Debug\PresupuestosTest.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Dao\Dao.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\NHibernate.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.dll.config
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.dll
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\PresupuestosTest.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\IBM.Data.Informix.dll
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\nunit.framework.dll
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Business.dll
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Data.dll
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.View.exe
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Antlr3.Runtime.dll
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Business.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.Data.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Presupuestos.View.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\nunit.framework.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Aop.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Aop.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Core.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Core.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.NHibernate30.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Data.NHibernate30.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.Microsoft.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.Microsoft.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.NUnit.pdb
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Spring.Testing.NUnit.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Mappings\Usuario.hbm.xml
+C:\Users\rpena\Desktop\tempo\Presupuestos\PresupuestosTest\bin\Debug\Dao\NHibernate.xml

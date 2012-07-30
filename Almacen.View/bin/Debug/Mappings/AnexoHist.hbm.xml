@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.AnexoHist,Almacen.Data" table="anexo_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.AnexoHistId,Almacen.Data">
+      <key-property name="IdAnexo" column="id_anexo" type="int" />
+      <key-property name="ModAnexo" column="mod_anexo" type="int" />
+    </composite-id>
+    <property name="NumeroAnexo" column="numero_anexo" type="string" />
+    <property name="FechaAnexo" column="fecha_anexo" type="DateTime" />
+    <property name="Instituto" column="instituto" type="string" />
+    <property name="DesAnexo" column="des_anexo" type="string" />    
+    <many-to-one name="TipoLicitacion" column="id_tipolicitacion" />
+    <property name="TechoPresupuestal" column="techo_presupuestal" type="Decimal" />
+    <property name="ImporteIva" column="importe_iva" type="short" />     
+    <many-to-one name="Iva" >   
+      <column name="id_iva"  />      
+      <column name="porcentaje"  />
+    </many-to-one>    
+    <many-to-one name="Usuario" column="id_usuario" />    
+    <many-to-one name="Almacen" column="id_almacen" />    
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <bag name="CotizacionHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_anexo" />
+        <column name="mod_anexo" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CotizacionHist,Almacen.Data" />
+    </bag>
+    <bag name="AnexoDetalleHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_anexo" />
+        <column name="mod_anexo" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.AnexoDetalleHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

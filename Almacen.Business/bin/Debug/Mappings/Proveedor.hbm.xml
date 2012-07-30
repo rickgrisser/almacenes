@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Proveedor,Almacen.Data" table="proveedor" lazy="true">
+    <id name="CveProveedor" column="cve_proveedor" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="NombreFiscal" column="nombre_fiscal" type="string" />
+    <property name="NombreComercial" column="nombre_comercial" type="string" />
+    <property name="Paterno" column="paterno" type="string" />
+    <property name="Materno" column="materno" type="string" />
+    <property name="Nombre" column="nombre" type="string" />
+    <property name="Calle" column="calle" type="string" />
+    <property name="Colonia" column="colonia" type="string" />
+    <property name="Delegacion" column="delegacion" type="string" />
+    <property name="Estado" column="estado" type="string" />
+    <property name="Pais" column="pais" type="string" />
+    <property name="CodigoP" column="codigo_p" type="string" />
+    <property name="Rfc" column="rfc" type="string" />
+    <property name="Tel" column="tel" type="string" />
+    <property name="Tel2" column="tel2" type="string" />
+    <property name="Tel3" column="tel3" type="string" />
+    <property name="Fax" column="fax" type="string" />
+    <property name="Correo" column="correo" type="string" />
+    <property name="Rpaterno" column="rpaterno" type="string" />
+    <property name="Rmaterno" column="rmaterno" type="string" />
+    <property name="Rnombre" column="rnombre" type="string" />
+    <property name="Giro" column="giro" type="string" />
+    <property name="Observacion" column="observacion" type="string" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <bag name="Cotizacion" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_proveedor" />
+      <one-to-many class="Almacen.Data.Entities.Cotizacion,Almacen.Data" />
+    </bag>
+    <bag name="CotizacionHist" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_proveedor" />
+      <one-to-many class="Almacen.Data.Entities.CotizacionHist,Almacen.Data" />
+    </bag>
+    <bag name="Fallo" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_proveedor" />
+      <one-to-many class="Almacen.Data.Entities.Fallo,Almacen.Data" />
+    </bag>
+    <bag name="FalloHist" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_proveedor" />
+      <one-to-many class="Almacen.Data.Entities.FalloHist,Almacen.Data" />
+    </bag>
+    <bag name="Pedido" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_proveedor" />
+      <one-to-many class="Almacen.Data.Entities.Pedido,Almacen.Data" />
+    </bag>
+    <bag name="PedidoHist" inverse="true" lazy="true" cascade="delete">
+      <key column="cve_proveedor" />
+      <one-to-many class="Almacen.Data.Entities.PedidoHist,Almacen.Data" />
+    </bag>    
+  </class>
+</hibernate-mapping>

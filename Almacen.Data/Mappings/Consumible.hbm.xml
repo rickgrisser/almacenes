@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Consumible,Almacen.Data" table="consumible" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ConsumibleId,Almacen.Data">
+      <key-property name="IdConsumible" column="id_consumible" type="string" />
+      <key-many-to-one name="Modelo" class="Almacen.Data.Entities.Modelo,Almacen.Data">
+        <column name="id_marca" />
+        <column name="id_modelo" />
+        <column name="id_cabms" />
+      </key-many-to-one>
+    </composite-id>
+    <many-to-one name="CatColor" column="id_color" cascade="save-update" />
+    <many-to-one name="CatTipoconsumible" column="id_tipoconsumible" cascade="save-update" />
+    <many-to-one name="CatTipoimpresora" column="id_tipoimpresora" cascade="save-update" />
+    <property name="NumeroParte" column="numero_parte" type="string" />
+  </class>
+</hibernate-mapping>

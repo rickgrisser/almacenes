@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Conteos,Almacen.Data" table="conteos" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ConteosId,Almacen.Data">
+      <key-many-to-one name="Marbete" class="Almacen.Data.Entities.Marbete,Almacen.Data">
+        <column name="numero_marbete" />
+        <column name="fecha_inventario" />
+        <column name="id_almacen" />
+      </key-many-to-one>
+      <key-many-to-one name="Articulo" class="Almacen.Data.Entities.Articulo,Almacen.Data">
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key-many-to-one>
+    </composite-id>
+    <property name="Conteo1" column="conteo1" type="Decimal" />
+    <property name="Conteo2" column="conteo2" type="Decimal" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+  </class>
+</hibernate-mapping>

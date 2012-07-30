@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.AsignacionBienHist,Almacen.Data" table="asignacion_bien_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.AsignacionBienHistId,Almacen.Data">
+      <key-property name="IdAsignacion" column="id_asignacion" type="int" />
+      <key-property name="ModAsignacion" column="mod_asignacion" type="int" />
+    </composite-id>
+    <property name="FechaAsignacion" column="fecha_asignacion" type="DateTime" />
+    <property name="IdEmpleado" column="id_empleado" type="int" />
+    <property name="IdJefeActivo" column="id_jefe_activo" type="int" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="IdActivoFijo" column="id_activo_fijo" type="int" />
+    <property name="IdVerificador" column="id_verificador" type="int" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <!--<bag name="AsignacionBienDetalleHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_asignacion" />
+        <column name="mod_asignacion" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.AsignacionBienDetalleHist,Almacen.Data" />
+    </bag>-->
+  </class>
+</hibernate-mapping>

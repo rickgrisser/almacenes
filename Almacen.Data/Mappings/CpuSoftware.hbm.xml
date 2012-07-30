@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CpuSoftware,Almacen.Data" table="cpu_software" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.CpuSoftwareId,Almacen.Data">
+      <key-many-to-one name="CatSoftware" class="Almacen.Data.Entities.CatSoftware,Almacen.Data" column="id_software" />
+      <key-many-to-one name="Cpu" class="Almacen.Data.Entities.Cpu,Almacen.Data">
+        <column name="id_cpu" />
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+        <column name="inventario" />
+        <column name="consecutivo" />
+      </key-many-to-one>
+    </composite-id>-->
+    <id name="IdCpuSoftware" column="id_cpusoftware" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="IdCpu" class="Almacen.Data.Entities.Cpu,Almacen.Data" column="id_cpu" />
+    <many-to-one name="IdCatSoftware" class="Almacen.Data.Entities.CatSoftware,Almacen.Data" column="id_software" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="Estatus" column="estatus" type="string" />
+    <many-to-one name="CatSoftware" column="id_software" cascade="save-update" not-null="true" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  
+<query name="Entrada.NumeroMaxEntrada">
+  <![CDATA[select Max(a.NumeroEntrada) from Entrada a where a.Almacen.IdAlmacen = :strAlmacen 
+             and year(a.FechaEntrada) = :intAnio ]]>
+</query>
+  
+<query name="Entrada.MaxId">
+  <![CDATA[select Max(a.IdEntrada) from Entrada a]]>
+</query>
+  <!--a where a.Almacen.IdAlmacen = :strAlmacen 
+             and year(a.FechaEntrada) = :intAnio-->
+<query name="Entrada.EntradaExiste">
+  <![CDATA[Select count(*) from Entrada a where a.Almacen.IdAlmacen = :strAlmacen 
+             and a.NumeroEntrada = :intNumeroEntrada and year(a.FechaEntrada) = :intAnio]]>
+</query>
+
+
+  <query name="Entrada.CargaEntrada">
+    <![CDATA[from Entrada e 
+            join fetch e.EntradaDetalle ed
+            join fetch ed.Articulo
+            join fetch e.Pedido
+            join fetch e.Recibio
+            join fetch e.Supervisor
+            join fetch e.CatActividad
+            join fetch e.CatPresupuesto
+             where e.NumeroEntrada = :intNumeroEntrada and year(e.FechaEntrada) = :intAnio 
+             and e.Usuario.IdUsuario = :intIdUsuario and e.Almacen.IdAlmacen = :strAlmacen
+             and (e.EstadoEntrada <> 'C' or e.EstadoEntrada is null)]]>
+  </query>
+
+  <query name="Entrada.CargaUltimaFecha">
+    <![CDATA[Select Max(FechaEntrada) from Entrada e
+              where e.Almacen = :objAlmacen]]>
+  </query>
+
+  <query name="Entrada.CargaSoloEntrada">
+    <![CDATA[from Entrada e             
+             where e.NumeroEntrada = :intNumeroEntrada and year(e.FechaEntrada) = :intAnio 
+             and e.Almacen.IdAlmacen = :strAlmacen
+             and (e.EstadoEntrada <> 'C' or e.EstadoEntrada is null)]]>
+  </query>
+
+  <query name="Entrada.RptEntradaFolio">
+    <![CDATA[select e.NumeroEntrada, e.FechaEntrada, e.Pedido.Proveedor.NombreFiscal,
+                  e.NumeroFactura, e.Pedido.NumeroPedido, e.Pedido.CatTipopedido.DesTipoped,
+                  (e.Pedido.ImporteTotal-e.Pedido.ImporteDescuento) * ((e.Pedido.Iva.Id.Porcentaje/100)+1)
+                from Entrada e             
+                where e.FechaEntrada between :datFechaIni and :datFechaFin
+                  and e.Almacen = :objAlmacen
+                  and (e.EstadoEntrada <> 'C' or e.EstadoEntrada is null)]]>
+  </query>
+  
+ <!-- 
+<query name="Entrada.AnioActual">
+  <![CDATA[select year(current) from Almacen group by 1]]>
+</query>
+  
+<query name="Entrada.FechaActual">
+  <![CDATA[select current from Almacen group by 1]]>
+</query>
+  
+<query name="Entrada.VerificaEntrada">
+  <![CDATA[from EntradaDetalle ed join fetch ed.Id.Entrada a where a.Almacen.IdAlmacen = :idalmacen 
+             and a.NumeroEntrada = :num_ent and year(a.FechaEntrada) = :a_entrada
+             and a.Usuario.IdUsuario = :id_usuario]]>
+</query>
+  
+-->
+  
+</hibernate-mapping>

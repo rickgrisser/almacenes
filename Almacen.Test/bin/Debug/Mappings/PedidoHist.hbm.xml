@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.PedidoHist,Almacen.Data" table="pedido_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.PedidoHistId,Almacen.Data">
+      <key-property name="IdPedido" column="id_pedido" type="int" />
+      <key-property name="ModPedHist" column="mod_ped_hist" type="int" />
+    </composite-id>
+    <property name="FechaPedido" column="fecha_pedido" type="DateTime" />
+    <property name="NumeroPedido" column="numero_pedido" type="int" />
+    <many-to-one name="CatTipopedido" column="id_tipoped"  />
+    <many-to-one name="Proveedor" column="cve_proveedor"  />
+    <property name="IdAnexo" column="id_anexo" type="int" />
+    <property name="IdRequisicion" column="id_requisicion" type="int" />
+    <many-to-one name="Fundamento" column="cve_fundamento"  />
+    <property name="IdReservaautoriza" column="id_reservaautoriza" type="int" />
+    <many-to-one name="CatArea" column="cve_area"  />
+    <property name="ImporteDescuento" column="importe_descuento" type="Decimal" />
+    <many-to-one name="Iva">
+      <column name="id_iva"  />
+      <column name="porcentaje"  />
+    </many-to-one>
+    <many-to-one name="CatActividad" column="id_actividad"  />
+    <many-to-one name="CatPresupuesto" column="id_presupuesto"  />
+    <property name="EstadoPedido" column="estado_pedido" type="string" />
+    <property name="ImporteTotal" column="importe_total" type="Decimal" />
+    <property name="Observaciones" column="observaciones" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <bag name="PedidoDetalleHis" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_pedido" />
+        <column name="mod_ped_hist" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.PedidoDetalleHis,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

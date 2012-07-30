@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ReservaAutoHis,Almacen.Data" table="reserva_auto_his" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ReservaAutoHisId,Almacen.Data">
+      <key-property name="IdReservaautoriza" column="id_reservaautoriza" type="int" />
+      <key-property name="ModificacionReser" column="modificacion_reser" type="int" />
+    </composite-id>
+    <many-to-one name="CatEjercicio" column="id_ejercicio"  />
+    <property name="FechaAutoriza" column="fecha_autoriza" type="DateTime" />
+    <property name="FolioAutoriza" column="folio_autoriza" type="string" />
+    <property name="Mes01" column="mes01" type="Decimal" />
+    <property name="Mes02" column="mes02" type="Decimal" />
+    <property name="Mes03" column="mes03" type="Decimal" />
+    <property name="Mes04" column="mes04" type="Decimal" />
+    <property name="Mes05" column="mes05" type="Decimal" />
+    <property name="Mes06" column="mes06" type="Decimal" />
+    <property name="Mes07" column="mes07" type="Decimal" />
+    <property name="Mes08" column="mes08" type="Decimal" />
+    <property name="Mes09" column="mes09" type="Decimal" />
+    <property name="Mes10" column="mes10" type="Decimal" />
+    <property name="Mes11" column="mes11" type="Decimal" />
+    <property name="Mes12" column="mes12" type="Decimal" />
+    <many-to-one name="CatPartida" column="partida"  />
+    <property name="IdReserva" column="id_reserva" type="int" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+  </class>
+</hibernate-mapping>

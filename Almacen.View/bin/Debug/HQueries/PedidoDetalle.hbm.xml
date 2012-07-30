@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  
+<query name="PedidoDetalle.RptPedidosGenerados">
+  <![CDATA[Select pd.Pedido.Requisicion.FechaRequisicion, pd.Pedido.NumeroPedido, pd.Pedido.FechaPedido,
+                ap.Id.CatPartida.Partida, ap.Id.CatPartida.DesPartida
+              from PedidoDetalle pd, ArticuloPartida ap
+              where pd.Pedido.Requisicion.Almacen = :objAlmacen 
+                and pd.Pedido.Requisicion.NumeroRequisicion = :intNumRequisicion 
+                and year(pd.Pedido.Requisicion.FechaRequisicion) = :intAnio
+                and (ap.Id.Articulo=pd.Articulo and ap.FechaFin is null)]]>
+</query>
+  
+</hibernate-mapping>

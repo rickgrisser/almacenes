@@ -1,0 +1,33 @@
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.frmAcceso.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.frmBusqueda.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.frmBusquedaEstructuraProgramatica.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.frmCatPartida.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.frmCatProveedor.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.frmMDI.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.frmPresupuestoInicial.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.Imagenes.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\PresupuestosMap.Properties.Resources.resources
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\WinAppPresupuestos.exe.config
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\log4net.xml
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\NHibernate.xml
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\WinAppPresupuestos.exe
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\WinAppPresupuestos.pdb
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\Castle.Core.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\Castle.DynamicProxy2.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\IBM.Data.Informix.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\Iesi.Collections.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\LinFu.DynamicProxy.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\log4net.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\NHibernate.ByteCode.LinFu.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\NHibernate.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\PresupuestosMap.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\bin\Debug\PresupuestosMap.pdb
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\WinAppPresupuestos.exe
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\WinAppPresupuestos\obj\x86\Debug\WinAppPresupuestos.pdb
+C:\PresupuestosArquitectura\Presupuestos\WinAppPresupuestos\bin\Debug\WinAppPresupuestos.exe.config
+C:\PresupuestosArquitectura\Presupuestos\WinAppPresupuestos\obj\x86\Debug\WinAppPresupuestos.exe
+C:\PresupuestosArquitectura\Presupuestos\WinAppPresupuestos\obj\x86\Debug\WinAppPresupuestos.pdb

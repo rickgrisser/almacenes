@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.RequisicionDetall,Almacen.Data" table="requisicion_detall" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.RequisicionDetallId,Almacen.Data">
+      <key-many-to-one name="Requisicion" class="Almacen.Data.Entities.Requisicion,Almacen.Data" column="id_requisicion" />
+      <key-property name="Renglon" column="renglon" type="short" />
+    </composite-id>-->
+    <id name="IdRequisicionDetalle" column="id_requisiciondetalle" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="Requisicion" class="Almacen.Data.Entities.Requisicion,Almacen.Data" column="id_requisicion" />
+    <property name="Renglon" column="renglon" type="short" />
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <property name="Cantidad" column="cantidad" type="Decimal" />
+    <!--<many-to-one name="Requisicion" column="id_requisicion"  not-null="true" />-->
+  </class>
+</hibernate-mapping>

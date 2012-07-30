@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.EntradaHist,Almacen.Data" table="entrada_hist" lazy="true">    
+    <id name="Id" column="id_entradahist" type="long">
+      <generator class="increment" />
+    </id>
+    <property name="IdExterno" column="id_entrada" type="long"/>
+    <property name="NumeroEntrada" column="numero_entrada" type="int" />
+    <property name="FechaEntrada" column="fecha_entrada" type="DateTime" />
+    <property name="NumeroFactura" column="numero_factura" type="string" />
+    <many-to-one name="Pedido" column="id_pedido"  />
+    <many-to-one name="Recibio" column="recibio" />
+    <many-to-one name="Supervisor" column="supervisor" />
+    <property name="EstadoEntrada" column="estado_entrada" type="string" />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <many-to-one name="CatActividad" column="id_actividad"  />
+    <many-to-one name="CatPresupuesto" column="id_presupuesto"  />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <property name="FechaModificacion" column="fecha_modificacion" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="Tipo" column="tipo" type="string" />
+    <property name="Modificacion" column="modificacion" type="int" />    
+  </class>
+</hibernate-mapping>

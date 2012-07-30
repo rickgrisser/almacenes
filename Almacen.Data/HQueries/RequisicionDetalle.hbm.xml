@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="RequisicionDetalle.Cantidad">
+    <![CDATA[Select rd.Cantidad from RequisicionDetall rd
+              where rd.Requisicion.IdRequisicion = :intIdRequisicion
+              and rd.Articulo.Id.CveArt = :intCveArt]]>
+  </query>
+
+  <query name="RequisicionDetalle.RptRequisicionVale">
+    <![CDATA[Select rd.Requisicion.NumeroRequisicion, rd.Requisicion.FechaRequisicion, 
+              rd.Articulo.Id.CveArt, rd.Articulo.DesArticulo, rd.Articulo.CatUnidad,
+              rd.Cantidad, fd.PrecioFallo, rd.Requisicion.Anexo.NumeroAnexo
+              from RequisicionDetall rd, FalloDetalle fd
+              where rd.Requisicion.Almacen = :objAlmacen
+              and year(rd.Requisicion.FechaRequisicion) = :intAnio
+              and rd.Requisicion.NumeroRequisicion = :intNumRequisicion
+              and (fd.Articulo=rd.Articulo and fd.Fallo.Anexo=rd.Requisicion.Anexo)]]>
+  </query>
+  
+</hibernate-mapping>

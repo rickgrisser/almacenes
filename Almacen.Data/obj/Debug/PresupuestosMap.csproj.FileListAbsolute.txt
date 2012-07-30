@@ -1,0 +1,10 @@
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosMap\bin\Debug\PresupuestosMap.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosMap\bin\Debug\PresupuestosMap.pdb
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosMap\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosMap\obj\Debug\PresupuestosMap.dll
+C:\Users\dayala\Documents\Visual Studio 2010\Projects\Presupuestos\PresupuestosMap\obj\Debug\PresupuestosMap.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosMap\bin\Debug\PresupuestosMap.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosMap\bin\Debug\PresupuestosMap.pdb
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosMap\obj\Debug\ResolveAssemblyReference.cache
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosMap\obj\Debug\PresupuestosMap.dll
+C:\PresupuestosArquitectura\Presupuestos\PresupuestosMap\obj\Debug\PresupuestosMap.pdb

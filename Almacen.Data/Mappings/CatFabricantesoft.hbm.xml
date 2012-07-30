@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatFabricantesoft,Almacen.Data" table="cat_fabricantesoft" lazy="true">
+    <id name="IdFabricantesoft" column="id_fabricantesoft" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesFabricantesoft" column="des_fabricantesoft" type="string" />
+    <bag name="CatSoftware" inverse="true" lazy="true" cascade="delete">
+      <key column="id_fabricantesoft" />
+      <one-to-many class="Almacen.Data.Entities.CatSoftware,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:tx="http://www.springframework.net/tx">
+
+  <!-- Audit Logging Interceptor -->
+  <object id="auditInterceptor"
+          type="Almacen.Business.Audit.AuditInterceptor, Almacen.Business">
+  </object>
+
+  <object id="auditService" type="Almacen.Business.Audit.AuditServiceImp, Almacen.Business">
+    <property name="ObjectDao" ref="objectDao"/>
+    <property name="IdsDetalleHistorico">
+      <dictionary key-type="string"
+                  value-type="Almacen.Business.Audit.Historico,  Almacen.Business"/>
+    </property>
+  </object>
+
+  <object id="historicoAfterAdvice"
+          type="Almacen.Business.Audit.UpdateAfterHistorico,Almacen.Business" />
+
+  <object id="historicoBeforeAdvice"
+          type="Almacen.Business.Audit.UpdateBeforeHistorico,Almacen.Business" />
+
+  <object id="historicoAfterPoint"
+        type="Spring.Aop.Support.RegularExpressionMethodPointcutAdvisor">
+    <property name="patterns" >
+      <list>
+        <value>Guardar</value>
+        <value>Elimina</value>
+      </list>
+    </property>
+    <property name="advice" ref="historicoAfterAdvice"/>
+  </object>
+
+  <object id="historicoBeforePoint"
+        type="Spring.Aop.Support.RegularExpressionMethodPointcutAdvisor">
+    <property name="patterns" >
+      <list>
+        <value>Guardar</value>
+        <value>EliminarEntity</value>
+      </list>
+    </property>
+    <property name="advice" ref="historicoBeforeAdvice"/>
+  </object>
+
+  <object id="ProxyCreator" type="Spring.Aop.Framework.AutoProxy.ObjectNameAutoProxyCreator, Spring.Aop">
+    <property name="ObjectNames">
+      <list>
+        <value>*Service</value>
+      </list>
+    </property>
+    <property name="InterceptorNames">
+      <list>
+        <value>historicoAfterPoint</value>
+        <value>historicoBeforePoint</value>
+      </list>
+    </property>
+  </object>
+  
+  <!--Objetos de Negocio-->
+  <object id="usuarioService" type="Almacen.Business.Seguridad.UsuarioServiceImp, Almacen.Business">
+    <property name="UsuarioDao" ref="usuarioDao"/>
+  </object>
+
+  <object id="entradaService" type="Almacen.Business.ModEntrada.EntradaServiceImp, Almacen.Business">
+    <property name="EntradaDao" ref="entradaDao"/>
+    <property name="EntradaDetalleDao" ref="entradadetalleDao"/>
+    <property name="UsuarioDao" ref="usuarioDao"/>
+    <property name="PedidoDao" ref="pedidoDao"/>
+    <property name="CostoPromedioDao" ref="costopromedioDao"/>
+    <property name="SalidaDao" ref="salidaDao"/>
+    <property name="SalidaDetalleDao" ref="salidadetalleDao"/>
+    <property name="CierreDao" ref="cierreDao"/>
+    <property name="CierrePasoDao" ref="cierrepasoDao"/>
+    <property name="ArticuloDao" ref="articuloDao"/>
+    <property name="CatActividadDao" ref="catactividadDao"/>
+    <property name="CatPresupuestoDao" ref="catpresupuestoDao"/>
+    <property name="CatPartidaDao" ref="catpartidaDao"/>
+    <property name="CatTipopedidoDao" ref="cattipopedidoDao"/>
+    <property name="ProveedorDao" ref="proveedorDao"/>   
+  </object>
+
+  <object id="salidaService" type="Almacen.Business.ModSalida.SalidaServiceImp, Almacen.Business">
+    <property name="SalidaDao" ref="salidaDao"/>
+    <property name="SalidaDetalleDao" ref="salidadetalleDao"/>
+    <property name="UsuarioDao" ref="usuarioDao"/>
+    <property name="CatAreaDao" ref="catareaDao"/>
+    <property name="ArticuloDao" ref="articuloDao"/>
+    <property name="EntradaDao" ref="entradaDao"/>
+    <property name="EntradaDetalleDao" ref="entradadetalleDao"/>
+    <property name="CostoPromedioDao" ref="costopromedioDao"/>
+    <property name="CierreDao" ref="cierreDao"/>
+    <property name="CatPartidaDao" ref="catpartidaDao"/>
+  </object>
+
+  <object id="requisicionService" type="Almacen.Business.ModRequisicion.RequisicionServiceImp, Almacen.Business">
+    <property name="RequisicionDao" ref="requisicionDao"/>
+    <property name="RequisicionDetallDao" ref="requisiciondetallDao"/>
+    <property name="ArticuloDao" ref="articuloDao"/>
+    <property name="CatAreaDao" ref="catareaDao"/>
+    <property name="FalloDao" ref="falloDao"/>
+    <property name="FalloDetalleDao" ref="fallodetalleDao"/>
+    <property name="AnexoDao" ref="anexoDao"/>
+    <property name="PedidoDetalleDao" ref="pedidodetalleDao"/>
+  </object>
+
+  <object id="cierreService" type="Almacen.Business.ModCierre.CierreServiceImp, Almacen.Business">
+    <property name="CierreDao" ref="cierreDao"/>
+    <property name="CierrePasoDao" ref="cierrepasoDao"/>
+    <property name="ArticuloDao" ref="articuloDao"/>
+    <property name="SalidaDetalleDao" ref="salidadetalleDao"/>
+    <property name="CatPartidaDao" ref="catpartidaDao"/>    
+  </object>
+
+  <object id="almacenService" type="Almacen.Business.ModAlmacen.AlmacenServiceImp, Almacen.Business">
+    <property name="AlmacenDao" ref="almacenDao"/>
+  </object>
+
+  <object id="cierreborrarService" type="Almacen.Business.ModCierre.CierreBorrarServiceImp, Almacen.Business">
+    <property name="CierreDao" ref="cierreDao"/>
+  </object>
+
+  <object id="articuloService" type="Almacen.Business.ModCatalogos.ArticuloServiceImp, Almacen.Business">
+    <property name="ArticuloDao" ref="articuloDao"/>
+    <property name="ArticuloFarmaciaDao" ref="articulofarmaciaDao"/>
+    <property name="ArticuloPartidaDao" ref="articulopartidaDao"/>
+    <property name="CuadroBasicoDao" ref="cuadrobasicoDao"/>
+    <property name="CatUnidadDao" ref="catunidadDao"/>
+    <property name="ViaAdministracionDao" ref="viaadministracionDao"/>
+    <property name="TipoMedicamentoDao" ref="tipomedicamentoDao"/>
+    <property name="CatPartidaDao" ref="catpartidaDao"/>
+  </object>
+
+  <object id="articulocambiarService" type="Almacen.Business.ModCatalogos.ArticuloCambiarServiceImp, Almacen.Business">
+    <property name="ArticuloDao" ref="articuloDao"/>
+    <property name="ArticuloPartidaDao" ref="articulopartidaDao"/>
+    <property name="CuadroBasicoDao" ref="cuadrobasicoDao"/>
+    <property name="CatPartidaDao" ref="catpartidaDao"/>
+  </object>
+  
+  <tx:attribute-driven/>
+</objects>

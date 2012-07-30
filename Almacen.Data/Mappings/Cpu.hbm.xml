@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Cpu,Almacen.Data" table="cpu" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.CpuId,Almacen.Data">
+      <key-property name="IdCpu" column="id_cpu" type="int" />
+      <key-many-to-one name="ResguardoEntregaDetalle" class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data">
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+        <column name="id_resguardo" />
+        <column name="inventario" />
+        <column name="consecutivo" />
+      </key-many-to-one>
+    </composite-id>-->
+    <id name="IdCpu" column="id_cpu" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="ResguardoEntregaDetalle" class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data" column="id_resgaurdoentregadetalle" />
+    <many-to-one name="CatTipocomputadora" column="id_tipocomputadora" cascade="save-update" />
+    <many-to-one name="CatProcesador" column="id_procesador" cascade="save-update" />
+    <property name="Velocidadghz" column="velocidadghz" type="Decimal" />
+    <property name="Memoriagb" column="memoriagb" type="Decimal" />
+    <property name="Discogb" column="discogb" type="Decimal" />
+    <property name="CaracteristicasTecnicas" column="caracteristicas_tecnicas" type="string" />
+    <property name="Garantia" column="garantia" type="int" />
+    <many-to-one name="CatGarantia" column="id_garantia" cascade="save-update" />
+    <many-to-one name="CatClasificacion" column="id_clasificacion" cascade="save-update" />
+    <property name="FechaVenceGarantia" column="fecha_vence_garantia" type="DateTime" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <many-to-one name="CatUnidadlectora" column="id_unidadlectora" cascade="save-update" />
+    <bag name="CpuSoftware" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_cpu" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CpuSoftware,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

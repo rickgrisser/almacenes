@@ -1,0 +1,14 @@
+﻿<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="Proveedor.CargaProveedor">
+    <![CDATA[from Proveedor p 
+			where p.CveProveedor = :intCveProveedor]]>
+  </query>
+
+  <query name="Proveedor.CargaProveedores">
+    <![CDATA[from Proveedor p  
+			where p.NombreFiscal like :strNombreFiscal
+			order by p.NombreFiscal]]>
+  </query>
+
+</hibernate-mapping>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="Articulo.CargaArticulo">
+    <![CDATA[from Articulo a    
+              left join fetch a.ArticuloFarmacia af
+              left join fetch a.CuadroBasico cb
+              join fetch af.ViaAdministracion
+              join fetch af.TipoMedicamento
+              where a.Id.CveArt = :intCveArt and a.Id.Almacen.IdAlmacen = :strAlmacen]]>
+  </query>
+
+  <query name="Articulo.MaxCveArt">
+    <![CDATA[select Max(a.Id.CveArt) from Articulo a where a.Id.Almacen.IdAlmacen = :strAlmacen]]>
+  </query>
+  
+  <query name="Articulo.CargaArticulosXAlmacen">
+    <![CDATA[from Articulo a where a.Id.Almacen.IdAlmacen = :strAlmacen                
+              order by a.Id.CveArt]]>
+  </query>
+
+  <query name="Articulo.CargaArticuloPartida">
+    <![CDATA[from ArticuloPartida ap 
+              where ap.Id.Articulo.Id.CveArt = :intCveArt
+              and ap.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+              and ap.Id.Movimiento = (select Max(ap2.Id.Movimiento) from ArticuloPartida ap2
+                where ap2.Id.Articulo.Id.CveArt = :intCveArt
+                and ap2.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen)]]>
+  </query>
+
+  <query name="Articulo.CargaArticuloCambioPartida">
+    <![CDATA[from ArticuloPartida ap 
+               join fetch ap.Id.Articulo
+               where ap.Id.Articulo.Id.CveArt = :intCveArt
+               and ap.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+               and ap.Id.Movimiento = (select Max(ap2.Id.Movimiento) from ArticuloPartida ap2
+                where ap2.Id.Articulo.Id.CveArt = :intCveArt
+                and ap2.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen)]]>
+  </query>
+
+  <query name="Articulo.CargaArticuloCambioCuadro">
+    <![CDATA[from CuadroBasico cb
+              join fetch cb.Id.Articulo
+              where cb.Id.Articulo.Id.CveArt = :intCveArt
+              and cb.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen
+              and cb.Id.Movimiento = (select Max(cb2.Id.Movimiento) from CuadroBasico cb2
+              where cb2.Id.Articulo.Id.CveArt = :intCveArt
+              and cb2.Id.Articulo.Id.Almacen.IdAlmacen = :strAlmacen)]]>
+  </query>
+
+  </hibernate-mapping>

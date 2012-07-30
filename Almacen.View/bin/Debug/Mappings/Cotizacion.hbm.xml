@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Cotizacion,Almacen.Data" table="cotizacion" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.CotizacionId,Almacen.Data">
+      <key-property name="IdCotizacion" column="id_cotizacion" type="int" />
+      <key-many-to-one name="Anexo" class="Almacen.Data.Entities.Anexo,Almacen.Data" column="id_anexo" />
+    </composite-id>-->
+    <id name="IdCotizacion" column="id_cotizacion" type="long">
+      <generator class="assigned" />
+    </id>
+    <many-to-one name="Anexo" class="Almacen.Data.Entities.Anexo,Almacen.Data" column="id_anexo" />
+    <many-to-one name="Proveedor" column="cve_proveedor"  />
+    <property name="FechaCotizacion" column="fecha_cotizacion" type="DateTime" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaModificacion" column="fecha_modificacion" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="Modificacion" column="modificacion" type="int" />
+    <bag name="CotizacionDetalle" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_cotizacion" />
+        <!--<column name="id_anexo" />-->
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CotizacionDetalle,Almacen.Data" />
+    </bag>
+    <bag name="Fallo" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_cotizacion" />
+        <!--<column name="id_anexo" />-->
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Fallo,Almacen.Data" />
+    </bag>
+    <!--<many-to-one name="Anexo" column="id_anexo"  not-null="true" />-->
+  </class>
+</hibernate-mapping>

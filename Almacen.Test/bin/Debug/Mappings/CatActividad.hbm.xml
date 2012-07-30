@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatActividad,Almacen.Data" table="cat_actividad" lazy="true">
+    <id name="IdActividad" column="id_actividad" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesActividad" column="des_actividad" type="string" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="FechaBaja" column="fecha_baja" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <bag name="SalidaDetalle" inverse="true" lazy="true" cascade="delete">
+      <key column="id_actividad" />
+      <one-to-many class="Almacen.Data.Entities.SalidaDetalle,Almacen.Data" />
+    </bag>
+    <bag name="Entrada" inverse="true" lazy="true" cascade="delete">
+      <key column="id_actividad" />
+      <one-to-many class="Almacen.Data.Entities.Entrada,Almacen.Data" />
+    </bag>
+    <bag name="EntradaHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_actividad" />
+      <one-to-many class="Almacen.Data.Entities.EntradaHist,Almacen.Data" />
+    </bag>
+    <bag name="Pedido" inverse="true" lazy="true" cascade="delete">
+      <key column="id_actividad" />
+      <one-to-many class="Almacen.Data.Entities.Pedido,Almacen.Data" />
+    </bag>
+    <bag name="PedidoHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_actividad" />
+      <one-to-many class="Almacen.Data.Entities.PedidoHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

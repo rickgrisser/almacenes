@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.RequisicionHist,Almacen.Data" table="requisicion_hist" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.RequisicionHistId,Almacen.Data">
+      <key-property name="IdRequisicion" column="id_requisicion" type="int" />
+      <key-property name="ModRequisicion" column="mod_requisicion" type="int" />
+    </composite-id>
+    <many-to-one name="Anexo" column="id_anexo"  />
+    <property name="NumeroRequisicion" column="numero_requisicion" type="int" />
+    <property name="FechaRequisicion" column="fecha_requisicion" type="DateTime" />
+    <many-to-one name="CatArea" column="cve_area"  />
+    <property name="Estatus" column="estatus" type="string" />
+    <property name="DuracionAbasto" column="duracion_abasto" type="short" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <bag name="ReqDetHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_requisicion" />
+        <column name="mod_requisicion" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.ReqDetHist,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

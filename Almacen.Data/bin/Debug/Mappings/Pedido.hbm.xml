@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Pedido,Almacen.Data" table="pedido" lazy="true">
+    <id name="IdPedido" column="id_pedido" type="long">
+      <generator class="assigned" />
+    </id>
+    <property name="FechaPedido" column="fecha_pedido" type="DateTime" />
+    <property name="NumeroPedido" column="numero_pedido" type="int" />
+    <many-to-one name="CatTipopedido" column="id_tipoped"  />
+    <many-to-one name="Proveedor" column="cve_proveedor"  />
+    <!--<property name="IdAnexo" column="id_anexo" type="int" />-->
+    <many-to-one name="Anexo" column="id_anexo"  />
+    <many-to-one name="Requisicion" column="id_requisicion"  />
+    <many-to-one name="Fundamento" column="cve_fundamento"  />
+    <property name="IdReservaautoriza" column="id_reservaautoriza" type="int" />
+    <many-to-one name="CatArea" column="cve_area"  />
+    <property name="ImporteDescuento" column="importe_descuento" type="Decimal" />
+    <many-to-one name="Iva">
+      <column name="id_iva"  />
+      <column name="porcentaje"  />
+    </many-to-one>
+    <many-to-one name="CatActividad" column="id_actividad"  />
+    <many-to-one name="CatPresupuesto" column="id_presupuesto"  />
+    <property name="EstadoPedido" column="estado_pedido" type="string" />
+    <property name="ImporteTotal" column="importe_total" type="Decimal" />
+    <property name="Observaciones" column="observaciones" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaModificacion" column="fecha_modificacion" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="Modificacion" column="modificacion" type="int" />
+    <bag name="Entrada" inverse="true" lazy="true" cascade="delete">
+      <key column="id_pedido" />
+      <one-to-many class="Almacen.Data.Entities.Entrada,Almacen.Data" />
+    </bag>
+    <bag name="EntradaHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_pedido" />
+      <one-to-many class="Almacen.Data.Entities.EntradaHist,Almacen.Data" />
+    </bag>
+    <bag name="PedidoDetalle" inverse="true" lazy="true" cascade="delete"
+         order-by="id_pedido asc, renglon_pedido asc" fetch="join">
+      <key column="id_pedido" />
+      <one-to-many class="Almacen.Data.Entities.PedidoDetalle,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

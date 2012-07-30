@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="SalidaDetalle.SalidaExiste">
+    <![CDATA[Select count(*) from SalidaDetalle s where s.EntradaDetalle.Entrada.IdEntrada = :intIdEntrada]]>
+  </query>
+
+  <query name="SalidaDetalle.CargaSalidaDetalle">
+    <![CDATA[from SalidaDetalle s where s.Salida.IdSalida = :intIdSalida
+                and s.Articulo.Id.CveArt = :intCveArt
+                and (s.Salida.EstadoSalida <> 'C' or s.Salida.EstadoSalida is null)]]>
+  </query>
+
+  <query name="SalidaDetalle.MovimientosPosteriores" >
+    <![CDATA[select count(*) from SalidaDetalle sd where sd.Salida.Almacen.IdAlmacen = :strAlmacen
+                  and sd.Articulo.Id.CveArt in (:strArticulos) and sd.Salida.FechaSalida >= :strFecha
+                  and (sd.Salida.EstadoSalida <> 'C' or sd.Salida.EstadoSalida is null)]]>
+  </query>
+
+  <!--Sumatoria de CantidadSurtida c/Articulo x Salida FrmSalida-->
+  <query name="SalidaDetalle.CargaSumSurtida">
+    <![CDATA[select sd.Articulo.Id.CveArt, sd.CantidadPedida, sum(sd.CantidadSurtida)
+                from SalidaDetalle sd where sd.Salida.IdSalida = :intIdSalida
+                group by sd.Articulo.Id.CveArt, sd.CantidadPedida]]>
+  </query>
+
+  <query name="SalidaDetalle.RptSalidaVale">
+    <![CDATA[Select sd.Salida.FechaSalida, sd.Salida.NumeroSalida, 
+              sd.Articulo.Id.CveArt, sd.Articulo.DesArticulo, sd.Articulo.CatUnidad, sd.CantidadSurtida,
+              sd.CostoPromedio, sd.FechaCaducidad, sd.Salida.Usuario.Nombre, sd.EntradaDetalle.Entrada.NumeroEntrada
+              from SalidaDetalle sd              
+              where sd.Salida.NumeroSalida=:intNumSalida
+              and Year(sd.Salida.FechaSalida)=:intAnio
+              and sd.Salida.Almacen.IdAlmacen=:strAlmacen
+              and (sd.Salida.EstadoSalida <> 'C' or sd.Salida.EstadoSalida is null)]]>
+  </query>
+
+  <query name="SalidaDetalle.RptSalidaPartida">
+    <![CDATA[Select ap.Id.CatPartida.Partida, ap.Id.CatPartida.DesPartida,
+              sum(sd.CantidadSurtida * sd.CostoPromedio),
+              sd.EntradaDetalle.Entrada.CatPresupuesto.DesPresupuesto
+              from SalidaDetalle sd, ArticuloPartida ap              
+              where sd.Salida.FechaSalida between :datFechaIni and :datFechaFin
+              and sd.Salida.Almacen=:objAlmacen
+              and (sd.Salida.EstadoSalida <> 'C' or sd.Salida.EstadoSalida is null)
+              and (ap.Id.Articulo=sd.Articulo and ap.FechaFin is null)
+              group by 1,2,4
+              order by 1]]>
+  </query>
+
+  <query name="SalidaDetalle.RptSalidaFolioPartida">
+    <![CDATA[Select ap.Id.CatPartida.Partida, sd.Salida.NumeroSalida, sd.Salida.FechaSalida,
+                sd.Salida.CatArea.DesArea,
+                sum(sd.CantidadSurtida * sd.CostoPromedio)              
+              from SalidaDetalle sd, ArticuloPartida ap              
+              where sd.Salida.FechaSalida between :datFechaIni and :datFechaFin
+                and sd.Salida.Almacen=:objAlmacen
+                and (sd.Salida.EstadoSalida <> 'C' or sd.Salida.EstadoSalida is null)
+                and (ap.Id.Articulo=sd.Articulo and ap.FechaFin is null)
+                group by 1,2,3,4
+                order by 1,2]]>
+  </query>
+
+  <query name="SalidaDetalle.RptSalidaFolio">
+    <![CDATA[Select sd.Salida.NumeroSalida, sd.Salida.FechaSalida, sd.Salida.CatArea.DesArea,                
+                sum(sd.CantidadSurtida * sd.CostoPromedio)              
+              from SalidaDetalle sd              
+              where sd.Salida.FechaSalida between :datFechaIni and :datFechaFin
+                and sd.Salida.Almacen=:objAlmacen
+                and (sd.Salida.EstadoSalida <> 'C' or sd.Salida.EstadoSalida is null)                
+                group by 1,2,3
+                order by 1,2,3]]>
+  </query>
+
+  <!--<query name="SalidaDetalle.RptSalidaArea">
+    <![CDATA[Select sd.Articulo.Id.CveArt, 
+                sum(case month(sd.Salida.FechaSalida) when 1 then sd.CantidadSurtida end) as Enero
+              from SalidaDetalle sd              
+              where sd.Salida.FechaSalida between :datFechaIni and :datFechaFin
+                and sd.Salida.Almacen = :objAlmacen
+                and (sd.Salida.EstadoSalida <> 'C' or sd.Salida.EstadoSalida is null)                
+                group by 1
+                order by 1]]>
+  </query>-->
+  <!--(select ap.Id.CatPartida.Partida from ArticuloPartida ap Where ap.Id.Articulo=sd.Articulo
+              and ap.FechaFin is null),
+              (select ap.Id.CatPartida.DesPartida from ArticuloPartida ap Where ap.Id.Articulo=sd.Articulo
+              and ap.FechaFin is null),-->
+</hibernate-mapping>

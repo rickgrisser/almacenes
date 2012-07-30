@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CabmGrupo,Almacen.Data" table="cabm_grupo" lazy="true">
+    <id name="IdGrupo" column="id_grupo" type="string">
+      <generator class="assigned" />
+    </id>
+    <property name="DesGrupo" column="des_grupo" type="string" />
+    <bag name="CabmSubgrupo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_grupo" />
+      <one-to-many class="Almacen.Data.Entities.CabmSubgrupo,Almacen.Data" />
+    </bag>
+  </class>
+  <query name="CabmGrupo.Grupo">
+    <![CDATA[from CabmGrupo]]>
+  </query>
+ </hibernate-mapping>

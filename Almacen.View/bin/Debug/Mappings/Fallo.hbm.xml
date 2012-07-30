@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Fallo,Almacen.Data" table="fallo" lazy="true">
+    <id name="IdFallo" column="id_fallo" type="long">
+      <generator class="assigned" />
+    </id>
+    <many-to-one name="Cotizacion" class="Almacen.Data.Entities.Cotizacion,Almacen.Data" column="id_cotizacion" />
+    <many-to-one name="Anexo" class="Almacen.Data.Entities.Anexo,Almacen.Data" column="id_anexo" />
+    <!--<many-to-one name="Cotizacion">
+      <column name="id_cotizacion"  />
+      <column name="id_anexo"  />
+    </many-to-one>-->
+    <many-to-one name="Proveedor" column="cve_proveedor"  />
+    <property name="FechaFallo" column="fecha_fallo" type="DateTime" />
+    <property name="Estado" column="estado" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <many-to-one name="Almacen" column="id_almacen"  />
+    <property name="FechaModificacion" column="fecha_modificacion" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <property name="Modificacion" column="modificacion" type="int" />
+    <bag name="FalloDetalle" inverse="true" lazy="true" cascade="delete">
+      <key column="id_fallo" />
+      <one-to-many class="Almacen.Data.Entities.FalloDetalle,Almacen.Data" />
+    </bag>
+    
+  </class>
+</hibernate-mapping>

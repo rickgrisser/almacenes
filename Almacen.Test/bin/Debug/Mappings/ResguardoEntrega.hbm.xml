@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ResguardoEntrega,Almacen.Data" table="resguardo_entrega" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.ResguardoEntregaId,Almacen.Data">
+      <key-many-to-one name="EntradaDetalle" class="Almacen.Data.Entities.EntradaDetalle,Almacen.Data">
+        <column name="id_entrada" />
+        <column name="renglon_entrada" />
+      </key-many-to-one>
+      <key-property name="IdResguardo" column="id_resguardo" type="int" />
+    </composite-id>-->
+    <id name="IdResguardo" column="id_resguardo" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="EntradaDetalle" class="Almacen.Data.Entities.EntradaDetalle,Almacen.Data" column="id_entradadetalle" />    
+    <property name="FechaMinuta" column="fecha_minuta" type="DateTime" />
+    <property name="Comentarios" column="comentarios" type="string" />
+    <property name="Pais" column="pais" type="string" />
+    <many-to-one name="Usuario" column="id_usuario" cascade="save-update" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <many-to-one name="Modelo">
+      <!--DEL parrafo cascade="save-update"-->
+      <column name="id_cabms"  />
+      <column name="id_marca"  />
+      <column name="id_modelo"  />
+      <!---->
+    </many-to-one>
+    <property name="IdArea" column="id_area" type="int" />
+    <many-to-one name="IdRecibe" column="id_recibe" cascade="save-update" />
+    <many-to-one name="IdEntrega" column="id_entrega" cascade="save-update" />
+    <many-to-one name="IdEvatecno" column="id_evatecno" cascade="save-update" />
+    <property name="NombreEntrega" column="nombre_entrega" type="string" />
+    <property name="Recibe" column="recibe" type="string" />
+    <bag name="ResguardoEntregaDetalle" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key>
+        <column name="id_resguardo" />        
+      </key>
+      <one-to-many class="Almacen.Data.Entities.ResguardoEntregaDetalle,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

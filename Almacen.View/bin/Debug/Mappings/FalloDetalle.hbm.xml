@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.FalloDetalle,Almacen.Data" table="fallo_detalle" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.FalloDetalleId,Almacen.Data">
+      <key-many-to-one name="Fallo" class="Almacen.Data.Entities.Fallo,Almacen.Data" column="id_fallo" />
+      <key-property name="RenglonAnexo" column="renglon_anexo" type="short" />
+    </composite-id>-->
+    <id name="IdFalloDetalle" column="id_fallodetalle" type="long">
+      <generator class="assigned" />
+    </id>
+    <many-to-one name="Fallo" class="Almacen.Data.Entities.Fallo,Almacen.Data" column="id_fallo" />
+    <property name="RenglonAnexo" column="renglon_anexo" type="short" />
+    <property name="CantidadMax" column="cantidad_max" type="Decimal" />
+    <property name="CantidadMin" column="cantidad_min" type="Decimal" />
+    <property name="CantidadPed" column="cantidad_ped" type="Decimal" />
+    <property name="PrecioFallo" column="precio_fallo" type="Decimal" />
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <!--<many-to-one name="Fallo" column="id_fallo"  not-null="true" />-->
+  </class>
+</hibernate-mapping>

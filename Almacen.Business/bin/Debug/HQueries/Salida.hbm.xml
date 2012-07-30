@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+
+  <query name="Salida.NumeroMaxSalida">
+    <![CDATA[select Max(a.NumeroSalida) from Salida a where a.Almacen.IdAlmacen = :strAlmacen
+             and year(a.FechaSalida) = :intAnio]]>
+  </query>
+
+  <query name="Salida.CargaUltimaFecha">
+    <![CDATA[Select Max(s.FechaSalida) from Salida s
+              where s.Almacen = :objAlmacen]]>
+  </query>
+  
+  <query name="Salida.SalidaExiste">
+    <![CDATA[Select Count(*) from Salida s where s.Almacen.IdAlmacen = :strAlmacen
+             and s.NumeroSalida = :intNumSalida and year(s.FechaSalida) = :intAnio]]>
+  </query>
+
+  <query name="Salida.MaxId">
+    <![CDATA[select Max(s.IdSalida) from Salida s ]]>
+  </query>
+ <!--where s.Almacen.IdAlmacen = :strAlmacen 
+             and year(s.FechaSalida) = :intAnio-->
+  <query name="Salida.CargaSalida">
+    <![CDATA[from Salida s   
+              join fetch s.SalidaDetalle sd
+              join fetch sd.Articulo
+              join fetch s.Entrego  
+              join fetch s.CatArea
+              join fetch sd.EntradaDetalle 
+              where s.Almacen.IdAlmacen = :strAlmacen and year(s.FechaSalida) = :intAnio 
+              and s.NumeroSalida = :intNumeroSalida and s.Usuario.IdUsuario = :intIdUsuario
+              and (s.EstadoSalida <> 'C' or s.EstadoSalida is null)
+              order by sd.Articulo]]>
+  </query>
+  
+</hibernate-mapping>

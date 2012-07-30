@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.SalidaDetalle,Almacen.Data" table="salida_detalle" lazy="true">
+    <!--<composite-id name="Id" class="Almacen.Data.Entities.SalidaDetalleId,Almacen.Data">
+      <key-many-to-one name="Salida" class="Almacen.Data.Entities.Salida,Almacen.Data" column="id_salida" />
+      <key-property name="RenglonSalida" column="renglon_salida" type="int" />
+    </composite-id>-->
+    <id name="IdSalidaDetalle" column="id_salidadetalle" type="long">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="Salida" class="Almacen.Data.Entities.Salida,Almacen.Data" column="id_salida" />    
+    <property name="RenglonSalida" column="renglon_salida" type="short" />
+    <many-to-one name="EntradaDetalle" class="Almacen.Data.Entities.EntradaDetalle,Almacen.Data" column="id_entradadetalle" />
+    <!--<many-to-one name="EntradaDetalle">
+      <column name="id_entrada"  />
+      <column name="renglon_entrada"  />           
+    </many-to-one>-->
+    <many-to-one name="Articulo">
+      <column name="cve_art"  />
+      <column name="id_almacen"  />
+    </many-to-one>
+    <property name="CantidadPedida" column="cantidad_pedida" type="Decimal" />
+    <property name="CantidadSurtida" column="cantidad_surtida" type="Decimal" />
+    <property name="FechaCaducidad" column="fecha_caducidad" type="DateTime" />
+    <property name="NoLote" column="no_lote" type="string" />
+    <property name="CostoPromedio" column="costo_promedio" type="Decimal" />
+    <many-to-one name="CatActividad" column="id_actividad"  />
+    <many-to-one name="CatPresupuesto" column="id_presupuesto"  />    
+  </class>
+</hibernate-mapping>

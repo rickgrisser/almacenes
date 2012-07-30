@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Usuario,Almacen.Data" table="usuario" lazy="true">
+    <id name="IdUsuario" column="id_usuario" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="Rfc" column="rfc" type="string" />
+    <property name="Nombre" column="nombre" type="string" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="FechaBaja" column="fecha_baja" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <property name="Password" column="password" type="string" />
+    <bag name="Requisicion" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Requisicion,Almacen.Data" />
+    </bag>
+    <bag name="RequisicionHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.RequisicionHist,Almacen.Data" />
+    </bag>
+    <bag name="ReservaAutoHis" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.ReservaAutoHis,Almacen.Data" />
+    </bag>
+    <bag name="ReservaAutorizada" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.ReservaAutorizada,Almacen.Data" />
+    </bag>
+    <bag name="AnexoHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.AnexoHist,Almacen.Data" />
+    </bag>
+    <bag name="ReservaSolicHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.ReservaSolicHist,Almacen.Data" />
+    </bag>
+    <bag name="ReservaSolicitud" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.ReservaSolicitud,Almacen.Data" />
+    </bag>
+    <bag name="Salida" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Salida,Almacen.Data" />
+    </bag>
+    <bag name="SalidaHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.SalidaHist,Almacen.Data" />
+    </bag>
+    <bag name="UsuarioModulo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.UsuarioModulo,Almacen.Data" />
+    </bag>
+    <bag name="Articulo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Articulo,Almacen.Data" />
+    </bag>
+    <bag name="CatArea" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.CatArea,Almacen.Data" />
+    </bag>
+    <bag name="CatUnidad" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.CatUnidad,Almacen.Data" />
+    </bag>
+    <bag name="Cierre" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Cierre,Almacen.Data" />
+    </bag>
+    <bag name="Conteos" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Conteos,Almacen.Data" />
+    </bag>
+    <bag name="Cotizacion" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Cotizacion,Almacen.Data" />
+    </bag>
+    <bag name="Anexo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Anexo,Almacen.Data" />
+    </bag>
+    <bag name="CotizacionHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.CotizacionHist,Almacen.Data" />
+    </bag>
+    <bag name="Entrada" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Entrada,Almacen.Data" />
+    </bag>
+    <bag name="EntradaHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.EntradaHist,Almacen.Data" />
+    </bag>
+    <bag name="Fallo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Fallo,Almacen.Data" />
+    </bag>
+    <bag name="FalloHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.FalloHist,Almacen.Data" />
+    </bag>
+    <bag name="Fundamento" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Fundamento,Almacen.Data" />
+    </bag>
+    <bag name="Marbete" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Marbete,Almacen.Data" />
+    </bag>
+    <bag name="Pedido" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Pedido,Almacen.Data" />
+    </bag>
+    <bag name="PedidoHist" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.PedidoHist,Almacen.Data" />
+    </bag>
+    <bag name="Proveedor" inverse="true" lazy="true" cascade="delete">
+      <key column="id_usuario" />
+      <one-to-many class="Almacen.Data.Entities.Proveedor,Almacen.Data" />
+    </bag>   
+  </class> 
+</hibernate-mapping>

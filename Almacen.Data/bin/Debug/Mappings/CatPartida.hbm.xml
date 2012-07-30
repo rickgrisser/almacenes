@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatPartida,Almacen.Data" table="cat_partida" lazy="true">
+    <id name="Partida" column="partida" type="string">
+      <generator class="assigned" />
+    </id>
+    <property name="DesPartida" column="des_partida" type="string" />
+    <property name="Clase" column="clase" type="string" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="FechaBaja" column="fecha_baja" type="DateTime" />
+    <property name="Estatus" column="estatus" type="string" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <!--add parrafo-->
+    <bag name="ArticuloPartida" inverse="true" lazy="true" cascade="delete">
+      <key column="partida" />
+      <one-to-many class="Almacen.Data.Entities.ArticuloPartida,Almacen.Data" />
+    </bag>
+    <!--add parrafo-->
+    <bag name="ReservaAutoHis" inverse="true" lazy="true" cascade="delete">
+      <key column="partida" />
+      <one-to-many class="Almacen.Data.Entities.ReservaAutoHis,Almacen.Data" />
+    </bag>
+    <bag name="ReservaAutorizada" inverse="true" lazy="true" cascade="delete">
+      <key column="partida" />
+      <one-to-many class="Almacen.Data.Entities.ReservaAutorizada,Almacen.Data" />
+    </bag>
+    <bag name="ReservaSolicHist" inverse="true" lazy="true" cascade="delete">
+      <key column="partida" />
+      <one-to-many class="Almacen.Data.Entities.ReservaSolicHist,Almacen.Data" />
+    </bag>
+    <bag name="ReservaSolicitud" inverse="true" lazy="true" cascade="delete">
+      <key column="partida" />
+      <one-to-many class="Almacen.Data.Entities.ReservaSolicitud,Almacen.Data" />
+    </bag>
+    <bag name="Articulo" inverse="true" lazy="true" cascade="delete">
+      <key column="partida" />
+      <one-to-many class="Almacen.Data.Entities.Articulo,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

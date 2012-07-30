@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.PedidoEntregaHis,Almacen.Data" table="pedido_entrega_his" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.PedidoEntregaHisId,Almacen.Data">
+      <key-many-to-one name="PedidoDetalleHis" class="Almacen.Data.Entities.PedidoDetalleHis,Almacen.Data">
+        <column name="id_pedido" />
+        <column name="renglon_pedido" />
+        <column name="mod_ped_hist" />
+      </key-many-to-one>
+      <key-property name="Entrega" column="entrega" type="int" />
+    </composite-id>
+    <property name="FechaInicial" column="fecha_inicial" type="DateTime" />
+    <property name="FechaFinal" column="fecha_final" type="DateTime" />
+    <property name="Cantidad" column="cantidad" type="Decimal" />
+  </class>
+</hibernate-mapping>

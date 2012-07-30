@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Marca,Almacen.Data" table="marca" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.MarcaId,Almacen.Data">
+      <key-property name="IdMarca" column="id_marca" type="int" />
+      <key-many-to-one name="Cabms" class="Almacen.Data.Entities.Cabms,Almacen.Data" column="id_cabms" />
+    </composite-id>
+    <property name="DesMarca" column="des_marca" type="string" />
+    <bag name="Modelo" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_marca" />
+        <column name="id_cabms" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Modelo,Almacen.Data" />
+    </bag>
+    <many-to-one name="Cabms" column="id_cabms" cascade="save-update" not-null="true" />
+  </class>
+</hibernate-mapping>

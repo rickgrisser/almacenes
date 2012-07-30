@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.ReservaSolicitud,Almacen.Data" table="reserva_solicitud" lazy="true">
+    <id name="IdReserva" column="id_reserva" type="int">
+      <generator class="assigned" />
+    </id>
+    <many-to-one name="CatEjercicio" column="id_ejercicio"  />
+    <property name="FechaReserva" column="fecha_reserva" type="DateTime" />
+    <property name="FolioSolicita" column="folio_solicita" type="string" />
+    <property name="Importe" column="importe" type="Decimal" />
+    <many-to-one name="CatPartida" column="partida"  />
+    <many-to-one name="CatArea" column="cve_area"  />
+    <property name="Concepto" column="concepto" type="string" />
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />
+    <many-to-one name="Usuario" column="id_usuario"  />
+    <property name="Modificacion" column="modificacion" type="string" />
+    <bag name="ReservaAutorizada" inverse="true" lazy="true" cascade="delete">
+      <key column="id_reserva" />
+      <one-to-many class="Almacen.Data.Entities.ReservaAutorizada,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

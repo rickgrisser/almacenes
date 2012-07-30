@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.Articulo,Almacen.Data" table="articulo" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.ArticuloId,Almacen.Data">
+      <key-property name="CveArt" column="cve_art" type="int" />
+      <key-many-to-one name="Almacen" class="Almacen.Data.Entities.Almacen,Almacen.Data" column="id_almacen" />
+    </composite-id>
+    <property name="DesArticulo" column="des_articulo" type="string" />    
+    <property name="CatUnidad" column="unidad" type="string" />
+    <property name="Presentacion" column="presentacion" type="string" />
+    <property name="PresentacionCant" column="presentacion_cant" type="short" />
+    <property name="PresentacionUnid" column="presentacion_unid" type="string" />   
+    <property name="Maximo" column="maximo" type="Decimal" />
+    <property name="Minimo" column="minimo" type="Decimal" />
+    <property name="PuntoReorden" column="punto_reorden" type="Decimal" />
+    <property name="ConsumoPromedio" column="consumo_promedio" type="Decimal" />
+    <property name="MovimientoProm" column="movimiento_prom" type="Decimal" />
+    <property name="TipoMovimiento" column="tipo_movimiento" type="string" />
+    <property name="AreaLocaliza" column="area_localiza" type="string" />
+    <property name="AnaquelLocaliza" column="anaquel_localiza" type="string" />
+    <property name="NivelLocaliza" column="nivel_localiza" type="string" />
+    <many-to-one name="Usuario" column="id_usuario" /><!--cascade="save-update" />-->
+    <property name="FechaAlta" column="fecha_alta" type="DateTime" />
+    <property name="IpTerminal" column="ip_terminal" type="string" />    
+    <property name="Imagen" column="imagen" type="Byte[]" />         
+    <bag name="ArticuloFarmacia" inverse="true" lazy="true" cascade="save-update">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.ArticuloFarmacia,Almacen.Data" />
+    </bag>    
+    <bag name="ArticuloPartida" inverse="true" lazy="true" cascade="save-update">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.ArticuloPartida,Almacen.Data" />
+    </bag>
+    <!--Add parrafo-->
+    <bag name="ReqDetHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.ReqDetHist,Almacen.Data" />
+    </bag>
+    <bag name="RequisicionDetall" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.RequisicionDetall,Almacen.Data" />
+    </bag>
+    <bag name="SalidaDetHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.SalidaDetHist,Almacen.Data" />
+    </bag>
+    <bag name="SalidaDetalle" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.SalidaDetalle,Almacen.Data" />
+    </bag>
+    <bag name="Cierre" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_almacen" />
+        <column name="cve_art" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Cierre,Almacen.Data" />
+    </bag>
+    <bag name="Conteos" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Conteos,Almacen.Data" />
+    </bag>   
+    <bag name="CotizacionDetHis" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CotizacionDetHis,Almacen.Data" />
+    </bag>
+    <bag name="CotizacionDetalle" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CotizacionDetalle,Almacen.Data" />
+    </bag>
+    <bag name="CuadroBasico" inverse="true" lazy="true" cascade="save-update">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CuadroBasico,Almacen.Data" />
+    </bag>
+    <bag name="EntradaDetHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.EntradaDetHist,Almacen.Data" />
+    </bag>
+    <bag name="EntradaDetalle" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.EntradaDetalle,Almacen.Data" />
+    </bag>
+    <bag name="AnexoDetalle" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.AnexoDetalle,Almacen.Data" />
+    </bag>
+    <bag name="FalloDetalle" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.FalloDetalle,Almacen.Data" />
+    </bag>
+    <bag name="FalloDetalleHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.FalloDetalleHist,Almacen.Data" />
+    </bag>
+    <bag name="Marbete" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_almacen" />
+        <column name="cve_art" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.Marbete,Almacen.Data" />
+    </bag>
+    <bag name="AnexoDetalleHist" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.AnexoDetalleHist,Almacen.Data" />
+    </bag>
+    <bag name="PedidoDetalle" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.PedidoDetalle,Almacen.Data" />
+    </bag>
+    <bag name="PedidoDetalleHis" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="cve_art" />
+        <column name="id_almacen" />
+      </key>
+      <one-to-many class="Almacen.Data.Entities.PedidoDetalleHis,Almacen.Data" />
+    </bag>  
+  
+</class>
+</hibernate-mapping>

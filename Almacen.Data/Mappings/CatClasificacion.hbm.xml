@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CatClasificacion,Almacen.Data" table="cat_clasificacion" lazy="true">
+    <id name="IdClasificacion" column="id_clasificacion" type="int">
+      <generator class="assigned" />
+    </id>
+    <property name="DesClasificacion" column="des_clasificacion" type="string" />
+    <bag name="Cpu" inverse="true" lazy="true" cascade="delete">
+      <key column="id_clasificacion" />
+      <one-to-many class="Almacen.Data.Entities.Cpu,Almacen.Data" />
+    </bag>
+    <bag name="Dispositivo" inverse="true" lazy="true" cascade="delete">
+      <key column="id_clasificacion" />
+      <one-to-many class="Almacen.Data.Entities.Dispositivo,Almacen.Data" />
+    </bag>
+    <bag name="Impresora" inverse="true" lazy="true" cascade="delete">
+      <key column="id_clasificacion" />
+      <one-to-many class="Almacen.Data.Entities.Impresora,Almacen.Data" />
+    </bag>
+    <bag name="Ups" inverse="true" lazy="true" cascade="delete">
+      <key column="id_clasificacion" />
+      <one-to-many class="Almacen.Data.Entities.Ups,Almacen.Data" />
+    </bag>
+  </class>
+</hibernate-mapping>

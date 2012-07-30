@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <!--Build: with lujan99@usa.net Nhibernate template-->
+  <class name="Almacen.Data.Entities.CabmClase,Almacen.Data" table="cabm_clase" lazy="true">
+    <composite-id name="Id" class="Almacen.Data.Entities.CabmClaseId,Almacen.Data">
+      <key-property name="IdClase" column="id_clase" type="string" />
+      <key-many-to-one name="CabmSubgrupo" class="Almacen.Data.Entities.CabmSubgrupo,Almacen.Data">
+        <column name="id_subgrupo" />
+        <column name="id_grupo" />        
+      </key-many-to-one>
+    </composite-id>
+    <property name="DesClase" column="des_clase" type="string" />
+    <bag name="CabmSubclase" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="id_clase" />
+        <column name="id_subgrupo" />
+        <column name="id_grupo" />     
+      </key>
+      <one-to-many class="Almacen.Data.Entities.CabmSubclase,Almacen.Data" />
+    </bag>
+    <!--Add block-->
+    <many-to-one name="CabmSubgrupo"  cascade="save-update" not-null="true" >
+      <column name="id_subgrupo" />
+      <column name="id_grupo" />
+    </many-to-one>
+  </class>
+  <query name="CabmClase.Clase">
+    <![CDATA[from CabmClase c where c.CabmSubgrupo.DesSubgrupo=:subgrupo]]>
+  </query>
+</hibernate-mapping>
